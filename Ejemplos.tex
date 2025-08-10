@@ -1,0 +1,157 @@
+\documentclass{article}
+
+% -------------------- CONFIGURACIÓN GENERAL --------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\usepackage{amsmath, amssymb, amsfonts} % Matemática
+\usepackage{physics}                    % Derivadas, vectores, etc.
+\usepackage{siunitx}                    % Unidades (SI)
+\usepackage{graphicx}                  % Imágenes
+\usepackage{xcolor}                     % Colores
+\usepackage{tikz}                       % Gráficos y vectores
+\usepackage{pgfplots}                   % Gráficas de funciones
+\pgfplotsset{compat=1.18}
+\usepackage{float}                      % Posición exacta de figuras
+%\usepackage{hyperref}                   % Enlaces internos y externos
+\usepackage{fancyhdr}                   % Encabezados personalizados
+
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+% Encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Luca Di Bene - Física I}
+\lhead{Apuntes}
+\rfoot{\thepage}
+
+% Numeración de ecuaciones por sección
+\numberwithin{equation}{section}
+
+% -------------------- DOCUMENTO --------------------
+\title{Ejemplos}
+\author{Luca Di Bene}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+% -------------------- SECCIÓN EJEMPLOS --------------------
+\section{Vectores y Operaciones}
+
+Un vector se puede expresar como:
+\[
+\vec{v} = v_x \hat{i} + v_y \hat{j}
+\]
+
+\subsection{Producto escalar}
+\[
+\vec{a} \cdot \vec{b} = a_x b_x + a_y b_y
+\]
+
+\subsection{Producto vectorial}
+\[
+\vec{a} \times \vec{b} = \begin{vmatrix}
+\hat{i} & \hat{j} & \hat{k} \\
+a_x & a_y & a_z \\
+b_x & b_y & b_z
+\end{vmatrix}
+\]
+
+\subsection{Diagrama con vectores (TikZ)}
+\begin{figure}[H]
+    \centering
+    \shorthandoff{>}
+\begin{tikzpicture}[scale=1.2]
+    \draw[->] (0,0) -- (3,1) node[anchor=south west] {$\vec{A}$};
+    \draw[->] (0,0) -- (-1,2) node[anchor=south east] {$\vec{B}$};
+    \draw[->, thick, red] (0,0) -- (2,3) node[anchor=south] {$\vec{A}+\vec{B}$};
+    \draw[->, dashed, gray] (3,1) -- (2,3);
+    \draw[->, dashed, gray] (-1,2) -- (2,3);
+    \draw[->] (-3,0) -- (4,0) node[right] {x};
+    \draw[->] (0,-1) -- (0,4) node[above] {y};
+\end{tikzpicture}
+\shorthandon{>}
+    \caption{Suma de vectores}
+\end{figure}
+
+% -------------------- FUNCIONES Y GRÁFICOS --------------------
+\section{Gráficas de funciones}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines = middle,
+            xlabel = $x$, ylabel = $y$,
+            grid=both,
+            width=10cm,
+            height=6cm,
+            samples=100
+        ]
+        \addplot[blue, thick, domain=-5:5]{x^2};
+        \addplot[red, dashed, domain=-5:5]{2*x + 1};
+        \legend{$y = x^2$, $y = 2x + 1$}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfico de funciones}
+\end{figure}
+
+% -------------------- FÓRMULAS AVANZADAS --------------------
+\section{Fórmulas útiles}
+
+\subsection{Cinemática}
+\[
+x(t) = x_0 + v_0 t + \frac{1}{2} a t^2
+\]
+
+\subsection{Energía cinética}
+\[
+E_k = \frac{1}{2} m v^2
+\]
+
+\subsection{Integrales y derivadas}
+\[
+\int_0^T a(t) \dd{t} = v(T) - v(0)
+\qquad
+\dv{E}{t} = -P
+\]
+
+% -------------------- UNIDADES Y TABLAS --------------------
+\section{Unidades y tablas}
+
+\begin{itemize}
+    \item Masa: \SI{5.0}{\kilo\gram}
+    \item Longitud: \SI{2.0}{\metre}
+    \item Tiempo: \SI{1.5}{\second}
+\end{itemize}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Cantidad & Unidad & Símbolo \\
+        \hline
+        Masa & kilogramo & \si{\kilogram} \\
+        Longitud & metro & \si{\metre} \\
+        Tiempo & segundo & \si{\second} \\
+        \hline
+    \end{tabular}
+    \caption{Unidades del SI}
+\end{table}
+
+% -------------------- REFERENCIAS --------------------
+\section{Referencias cruzadas}
+
+La fórmula de energía cinética fue introducida en la sección \ref{sec:energia}, y es clave en mecánica.
+
+\label{sec:energia}
+
+% -------------------- FIN --------------------
+\end{document}
