@@ -26,6 +26,7 @@
 \definecolor{sectionColor}{HTML}{2240f0}
 \definecolor{definicionColor}{HTML}{2240f0}
 \definecolor{titleColor}{HTML}{ff0000}
+\definecolor{exerciceColor}{HTML}{00d5ff}
 
 % --------------- COMANDOS PERSONALIZADOS ---------------
 \newcommand{\newsection}[1]{
@@ -39,6 +40,11 @@
 \newcommand{\newtitle}[1]{
     \vspace{0.5cm}
     \noindent{\large \color{titleColor} \textbf{#1}}\\[0.2cm]
+}
+
+\newcommand{\newex}[1]{
+    \vspace{0.5cm}
+    \noindent{\large \color{exerciceColor} \textbf{#1}}\\[0.2cm]
 }
 
 \newcommand{\bl}[1]{\textbf{#1}}
@@ -477,8 +483,8 @@
     \par Los experimentos muestran que, al interactuar dos cuerpos, las fuer-zas que ejercen mutuamente son iguales en magnitud y opuestas en dire-ceión. Ésta es la tercera ley de Newton.
 
     \definicion{
-        \par \color{blue}\underline{\bl{Tercera ley}}\color{black}: si el cuerpo A eserce una fuerza sobre el cuerpo. B ("acción"), entonces, B ejerce una fuerza sobre A ("reacción"). Estas dos fuerzas tienen la misma magnitud Pero dirección opuesta, y actúan sobre diferentes cuerpos.
-        \[\vec{F_AB} = - \vec{F_BA}\]
+        \par \color{blue}\underline{\bl{Tercera ley}}\color{black}: si el cuerpo A eserce una fuerza sobre el cuerpo. B ("\text{acción}"), entonces, B ejerce una fuerza sobre A ("\text{reacción}"). Estas dos fuerzas tienen la misma magnitud Pero dirección opuesta, y actúan sobre diferentes cuerpos.
+        \[\vec{F}_{AB} = - \vec{F}_{BA}\]
     }
 
     \begin{figure}[H]
@@ -518,7 +524,7 @@
 
     \par Esta sección trata sobre el uso de la primera ley de Newton para resolver problemas de cuerpos en equilibrio. Quizás algunos de los problemas parezcan complicados; no obstante, lo importante es recordar que todos los problemas que implican partículas en equilibrio se resuelven igual.
 
-    \newtitle{Ejercicio 1. Equilibrio unidimensional: Tensión en una cuerda sin masa}
+    \newex{Ejercicio 1. Equilibrio unidimensional: Tensión en una cuerda sin masa}
 
     \par Una gimnasta de masa $m_G = 50.0 kg$ se cuelga del extremo inferior de una cuerda colgante. El extremo superior está fijo al techo de un gimnasio. Suponga que la masa de la cuerda es despreciable.
     \begin{enumerate}
@@ -527,8 +533,83 @@
         \item ¿Qué tensión hay en la parte superior de la cuerda?
     \end{enumerate}
     
-    \newtitle{Solución 1.}
+    \newex{Solución 1.}
 
-    \par Primero identificamos que la gimnasta y la cuerda, ambos estan en equilibrio. Tenemos como incognita el peso de la gimnasta $w_G$. La cuerda tira de la gimnasta con una 
+    \par Primero identificamos que la gimnasta y la cuerda, ambos estan en equilibrio. Tenemos como incognita el peso de la gimnasta $w_G$. La cuerda tira de la gimnasta con una fuerza $T_{CG}$ y la gimnasta tira de la cuerda con una fuerza $T_{GC}$. El techo ejerce otra fuerza sobre la cuerda, $T_{TC}$, que provoca que la cuerda y la gimnasta esten en equilibrio.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/3.1-1.png}
+    \end{figure}
+
+    \par El primer digrama representa la situación en si. El segundo diagrama representa las fuerzas que actúan sobre la gimnasta. El tercer diagrama representa las fuerzas que actúan sobre la cuerda.
+
+    \quad
+
+    \par Para calcular el peso de la gimnasta ($\vec{w}$), usaremos la ecuación de la gravedad, derivada de la segunda ley de Newton:
+
+    \[ \lvert \vec{w} \rvert = m \cdot 9.8 \text{m/s}^2 \]
+    \[ w_G = 50 \text{kg} \cdot 9.8 \text{m/s}^2 \]
+    \[ w_G = 490 \text{N} \]
+
+    \begin{center}
+        \par \bl{El peso de la gimnasta es de 490 Newtons}.
+    \end{center}
+
+    \par Entonce la magnitud de la fuerza que ejerce la cuerda sobre la gimnasta es: $T_{CG} = 490 \text{N}$. Y su dirección es contraria a la del peso de la gimnasta.
+
+    \par Por el par acción-reacción, existe la fuerza $\vec{T}_{GC} = - \vec{T}_{CG} = \vec{w}$, entonces la gimnasta tira de la cuerda con una fuerza de 490 Newtons con una dirección que apunta hacia abajo. Entonces la fuerza $\vec{T}_{TC}$ es igual en magnitud a $\vec{T}_{GC}$ pero con dirección opuesta, es decir, $\vec{T}_{TC} = - \vec{T}_{GC}$.
+
+    \quad
+
+    \par La \bl{tensión de la cuerda} es de $T_{TC} = 490 \text{N}$ en la parte superior de la cuerda y de $T_{CG} = 490 \text{N}$ en la parte inferior de la cuerda.
+
+    \newtitle{Empleo de la segunda ley de Newton: Dinámica de partículas}
+
+    \par Ahora podemos analizar problemas de dinámica, donde aplicamos la segunda ley de Newton a cuerpos sobre los cuales la fuerza neta no es cero, de manera que los cuerpos no están en equilibrio sino que tienen aceleración.
+
+    \definicion{
+        \centering
+        \( \Sigma \vec{F} = m \vec{a} \)
+    }
+
+    \newex{Ejercicio 2. Movimiento rectilíneo con una fuerza constante}
+
+    \par Un velero para hielo descansa en una superficie horizontal sin fricción (figura 5.7a). Sopla un viento constante (en la dirección de los patines del trineo), de modo que 4.0 s después de soltarse el velero adquiere una velocidad de 6.0 m>s (unos 22 km/h o 13 mi/h). ¿Qué fuerza constante $F_w$ ejerce el viento sobre el velero? La masa total del velero más el tripulante es de 200 kg.
+
+    \newex{Solución 2.}
+
+    \par Identificamos las variables que se nos dan:
+
+    \begin{itemize}
+        \item $m = 200 \text{kg}$
+        \item $v(0s) = 0.0 \text{m/s}$
+        \item $v(4s) = 22.0 \text{km/h} = 6.1 \text{m/s}$
+    \end{itemize}
+
+    \par Para calcular la fuerza usaremos la segunda ley de Newton: $\Sigma \vec{F} = m \vec{a}$. Pero primero debemos calcular la aceleración. Como tenemos una velocidad incial y otra 4s despues podemos utilizar:
+    \[ a = \frac{v_1 - v_0}{t_1 - t_0} \]
+
+    \[ a = \frac{6.1 \text{m/s} - 0.0 \text{m/s}}{4.0 \text{s}} = 1.525 \text{m/s}^2 \]
+
+    \par Por lo tanto, la fuerza constante que ejerce el viento sobre el velero es de $F_w = 200 \text{kg} \cdot 1.525 \text{m/s}^2 = 305 \text{N}$
+
+    \newtitle{Peso aparente e ingravidez aparente}
+
+    \par Cuando un pasajero de masa m viaja en un elevador con aceleración ay , una báscula da como peso aparente del pasajero:
+
+    \[ w = m \cdot (g + a_y) \]
+
+    \par Cuando el elevador está acelerando hacia arriba, $a_y$ es positiva y $n$ es mayor que el peso del pasajero $w = mg$. Si el elevador acelera hacia abajo, ay es negativa y n es menor que el peso. Si el pasajero no sabe que el elevador está acelerando, sentirá que su peso cambia y, de hecho, la báscula lo indica. El caso extremo sucede cuando el elevador tiene una aceleración hacia abajo $a_y = -g$, es decir, cuando está en caída libre. En este caso, $n = 0$ y el pasajero siente que no tiene peso.
+
+    \newex{Ejercicio 3. Aceleración cuesta abajo}
+
+    \par Un trineo cargado de estudiantes en vacaciones (peso total $w$) se desliza hacia abajo por una larga cuesta nevada. La pendiente tiene un ángulo constante $\alpha$, y el trineo está tan bien encerado que la fricción es despreciable. ¿Qué aceleración tiene el trineo?
+
+    \par ...
+
+    \newtitle{Fuerzas de fricción}
+
+    
 
 \end{document}
