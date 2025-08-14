@@ -642,13 +642,153 @@
     \newtitle{Fricción cinética y estática}
 
     \begin{multicols}{2}
-        \par Primero, cuando un cuerpo descansa o se desliza sobre una superficie, podemos representar la fuerza de contacto que la superficie ejerce sobre el cuerpo en términos de componentes de fuerza perpendiculares y paralelos a la superficie (figura). El vector componente paralelo a la superficie (y perpendicualr a n ) es la fuerza de fricción, denotada con $\vec{f}$.
+        \par Primero, cuando un cuerpo descansa o se desliza sobre una superficie, podemos representar la fuerza de contacto que la superficie ejerce sobre el cuerpo en términos de componentes de fuerza perpendiculares y paralelos a la superficie (figura). El vector componente paralelo a la superficie (y perpendicualr a n ) es la fuerza de fricción, denotada con $\vec{f}$. La dirección de la fuerza de fricción siempre es opuesta al movimiento relativo de las dos superficies.
 
         \begin{figure}[H]
             \centering
             \includegraphics[scale=0.6]{img/3.3-1.png}
         \end{figure}
     \end{multicols}
+
+    \par El tipo de fricción que actúa cuando un cuerpo se desliza sobre una superficie es la \bl{fuerza de fricción cinética $\vec{f}_k$}. La magnitud de esta fuerza suele aumentar al aumentar la fuerza normal. En muchos casos, la magnitud de la fuerza de fricción cinética $f_k$ experimental es aproximadamente proporcional a la magnitud n de la fuerza normal. En tales casos, representamos la relación con la ecuación:
+
+    \definicion{
+        \centering
+        \par \( f_k = \mu_k \cdot n \) \quad \quad \quad (magnitud de la fuerza de fricción cinética)
+    }
+
+    \par donde $\mu_k$ es una constante llamada coeficiente de fricción cinética. Cuanto más resbalosa sea una superficie, menor será el coeficiente de fricción. Al ser el cociente de dos magnitudes de fuerza ($\frac{{f}_k}{{n}}$), $\mu_k$ es un número puro sin unidades. (Caso similar a la masa inercial).
+
+    \vspace{0.5cm}
+
+    \par \color{red} \underline{DISCLAIMER}: \color{black} La ecuación sólo es una representación aproximada de un fenómeno complejo. En el nivel microscópico, las fuerzas de fricción y la normal se deben a las fuerzas intermoleculares (fundamentalmente eléctricas) entre dos superficies ásperas en los puntos donde entran en contacto.
+
+    \vspace{0.5cm}
+
+    \par Las fuerzas de fricción también pueden actuar cuando no hay movimiento relativo. Si tratamos de deslizar por el piso una caja con libros, tal vez no se mueva porque el piso ejerce una fuerza de fricción igual y opuesta sobre la caja. Ésta se llama \bl{fuerza de fricción estática $\vec{f}_s$}.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/3.3-2.png}
+    \end{figure}
+
+    \begin{center}
+        \par \bl{Tabla: Coeficientes de fricción aproximados}
+    \end{center}
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Materiales & Coeficiente de fricción estática, $\mu_s$ & Coeficiente de fricción cinética, $\mu_k$ \\
+            \hline
+            Acero sobre acero & 0.74 &  0.57 \\
+            \hline
+            Aluminio sobre acero & 0.61 &  0.47 \\
+            \hline
+            Cobre sobre acero & 0.53 &  0.36 \\
+            \hline
+            Latón sobre acero & 0.51 &  0.44 \\
+            \hline
+            Zinc sobre hierro colado & 0.85 &  0.21  \\
+            \hline
+            Cobre sobre hierro colado & 1.05 &  0.29  \\
+            \hline
+            Vidrio sobre vidrio & 0.94 &  0.40  \\
+            \hline
+            Cobre sobre vidrio & 0.68  &  0.53  \\
+            \hline
+            Teflón sobre teflón & 0.04 &  0.04 \\
+            \hline
+            Teflón sobre acero & 0.04 &  0.04 \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \newex{Ejercicio 4. Fricción en movimiento horizontal}
+
+    \par Usted intenta mover una caja de $500N$ por un piso horizontal. Para comenzar a moverla, debe tirar con una fuerza horizontal de $230N$. Una vez que la caja “se libera” y comienza a moverse, puede mantenerse a velocidad constante con sólo $200N$. ¿Cuáles son los coeficientes de fricción estática y cinética?
+
+    \newex{Solución 4.}
+
+    \par Sabemos que la caja esta en reposo cuando se le aplica una fuerza de $230N$ en el eje x.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{img/3.3-3.png}
+    \end{figure}
+
+    \par Usando la primera ley de Newton por componentes tenemos:
+
+    \[ \Sigma F_x = n + (-w) = 0 \quad \Longrightarrow \quad n = w = 500N \]
+
+    \[ \Sigma F_y = F + (-(f_s)_{max}) = 0 \quad \Longrightarrow \quad F = (f_s)_{max} = 230N \]
+
+    \par Entonces podemos calcular el coeficiente de fricción estática:
+
+    \[ \mu_s = \frac{F}{n} = \frac{230N}{500N} = 0.46 \]
+
+    \par También sabemos que si la caja esta en movimiento horizontal se mantendra en equilibrio si se le aplica una fuerza de $200N$:
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{img/3.3-4.png}
+    \end{figure}
+
+    \par Usando la primera ley de Newton por componentes tenemos:
+
+    \[ \Sigma F_x = n + (-w) = 0 \quad \Longrightarrow \quad n = w = 500N \]
+
+    \[ \Sigma F_y = F + (-f_k) = 0 \quad \Longrightarrow \quad F = f_k = 200N \]
+
+    \par Entonces podemos calcular el coeficiente de fricción cinética:
+
+    \[ \mu_k = \frac{F}{n} = \frac{200N}{500N} = 0.4 \]
+
+    \par Concluimos que el coeficiente de fricción estática es $0.46$ y el coeficiente de fricción cinética es $0.4$.
+
+    \newex{Ejercicio 5. Reducción al mínimo de la fricción cinética}
+
+    \par En el ejercicio anterior, suponga que usted intenta mover la caja atando una cuerda a ella y tira de la cuerda hacia arriba con un ángulo de 30° sobre la horizontal. ¿Qué fuerza debe aplicar al tirar para mantener la caja en movimiento con velocidad constante? ¿Esto es más fácil o difícil que tirar horizontalmente? Suponga que $w = 500N$ y $\mu_k = 0.40$.
+
+    \newex{Solución 5.}
+
+    \par Sabemos que la caja esta en equilibrio (su velocidad es constante) entonces aplicamos la primera ley de Newton para encontrar la fuerza $T$ que se debe aplicar para mantener la caja en movimiento:
+
+    \par Primero hacemos un diagrama de cuerpo libre:
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{img/3.3-5.png}
+    \end{figure}
+
+    \par Usando la primera ley de Newton por componentes tenemos:
+
+    \[ \Sigma F_x = T\cos(30^\circ) + (-f_k) = 0 \quad \Longrightarrow \quad T\cos(30^\circ) = f_k \]
+
+    \[ \Sigma F_y = T\sin(30^\circ) + n + (-w) = 0 \quad \Longrightarrow \quad n = w - T\sin(30^\circ) \]
+
+    \vspace{0.5cm}
+
+    \par Para encontrar la fuerza $T$ tenemos que usar el hecho de que $f_k = T\cos(30^\circ)$:
+
+    \[ T\cos(30^\circ) = f_k = \mu_k \cdot n \]
+
+    \par Remplazando:
+
+    \[ T\cos(30^\circ) = \mu_k \cdot (w - T\sin(30^\circ)) \]
+
+    \par Despejando $T$ tenemos:
+
+    \[ T = \frac{\mu_k \cdot w}{cos(30^\circ) + \mu_k \sin(30^\circ)} = \frac{0.40 \cdot 500N}{cos(30^\circ) + 0.40 \sin(30^\circ)} \approx 188N \]
+
+    \vspace{0.5cm}
+
+    \par Concluimos que la fuerza $T$ que debe aplicar para mantener la caja en movimiento es de 188N.
+
+    \vspace{0.5cm}
+
+    \par Por otro lado, si se intenta mover la caja horizontalmente, entonces la fuerza $T$ que se debe aplicar para mantener la caja en movimiento es de $\mu_k \cdot n = 0.40 \cdot 500N = 200N$. Al no ser reducida la fuerza normal $f_k$ no se reduce por lo que la fricción "jode" más al tratar de mover la caja.
 
     
 
