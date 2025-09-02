@@ -59,9 +59,11 @@
 }
 
 \newcommand{\definicion}[1]{%
+    \vspace{0.5cm}
     \begin{definicionbox}
         #1
     \end{definicionbox}
+    \vspace{0.5cm}
 }
 
 % --------------- ENCABEZADO ---------------
@@ -284,6 +286,8 @@
     \par Podemos calcular la magnitud de las componentes de $\vec{A}$ si conocemos la magnitud A y su dirección. Describimos la direccion de un vector como el angulo $\theta$ formado por le eje x positivo con el vector en sentido anti horario. Entonces por definición de trigonométricas:
     \[ \lvert \vec{A}_x \rvert = \lvert \vec{A} \rvert \cos \theta \]
     \[ \lvert \vec{A}_y \rvert = \lvert \vec{A} \rvert \sin \theta \]
+
+\newsection{Movimiento en dos o en tres dimensiones}
 
 % ------------------- SECCIÓN 2 -------------------
 
@@ -790,6 +794,327 @@
 
     \par Por otro lado, si se intenta mover la caja horizontalmente, entonces la fuerza $T$ que se debe aplicar para mantener la caja en movimiento es de $\mu_k \cdot n = 0.40 \cdot 500N = 200N$. Al no ser reducida la fuerza normal $f_k$ no se reduce por lo que la fricción "jode" más al tratar de mover la caja.
 
+    \newtitle{Fricción de rodamiento}
+
+    \par Es mucho más fácil mover un archivero lleno de documentos sobre un piso horizontal usando un carrito con ruedas que deslizándolo. Podemos definir un \bl{coeficiente de fricción de rodamiento $\mu_r$}, que es la fuerza horizontal necesaria para lograr rapidez constante en una superficie plana, dividida entre la fuerza normal hacia arriba ejercida por la superficie. Cuyo valor suele ser de 0.002 a 0.003 para ruedas de acero sobre rieles de acero, y de 0.01 a 0.02 para ruedas de caucho sobre concreto.
+
+    \newex{Ejercicio 6. Movimiento con fricción de rodamiento}
+
+    \par ...
+
+    \newtitle{Resistencia de fluidos y rapidez terminal}
+
+    \par Si usted saca la mano por la ventanilla de un automóvil que viaja con gran rapidez, comprobará la existencia de la \bl{resistencia de un fluido}, que es la fuerza que un fluido (gas o líquido) ejerce sobre un cuerpo que se mueve a través de él.
+
+    \par La dirección de la fuerza de resistencia de un fluido que actúa sobre un cuerpo siempre es opuesta a la dirección de la velocidad del cuerpo. La magnitud de la fuerza de resistencia de un fluido suele aumentar al incrementarse la rapidez del cuerpo en el fluido. Esto es muy diferente de la fuerza de fricción cinética entre dos superficies en contacto, que casi siempre podemos considerar independiente de la rapidez. A rapidez baja, la magnitud f de la fuerza de resistencia del fluido es aproximadamente proporcional a la rapidez $v$ del cuerpo:
+
+    \definicion{ 
+        \centering
+        $f = k v$ \quad \quad (resistencia del fluido a baja rapidez)
+        }
+
     
+    \noindent donde $k$ es una constante de proporcionalidad que depende de la forma y el tamaño del cuerpo, y las propiedades del fluido. Las unidades de este $k$ son $ [k] = \frac{N}{m/s} = \frac{kg \cdot \frac{m}{s^2} \cdot s }{m} = \frac{kg}{s}$.
+
+    \par La fuerza de resistencia es aproximadamente proporcional a $v^2$, no a $v$, para la rapidez de una pelota de tenis o una rapidez mayor y se denomina \bl{arrastre del aire} o sólo arrastre. En este caso, sustituimos la ecuación por la siguiente:
+
+    \definicion{
+        \centering
+        $f = D v^2$ \quad \quad (resistencia de fluidos a alta rapidez)
+    }
+
+    \par Por la dependencia de $v^2$, el arrastre aumenta rápidamente conforme se incrementa la rapidez. Las unidades de este $D$ son $ [D] = \frac{N}{m^2/s^2} = \frac{kg \cdot \frac{m}{s^2} \cdot s^2 }{m^2} = \frac{kg}{m}$.
+
+    \vspace{0.5cm}
+
+    \par Por los efectos de la resistencia de fluidos, un objeto que cae en un fluido no tiene aceleración constante. Para describir su movimiento debemos partir de la segunda ley de Newton.
+
+    \vspace{2cm}
+
+    \begin{multicols}{2}
+        \begin{minipage}{0.6\textwidth}
+            \par Consideremos esta situación: suponga que usted suelta una roca en la superficie de un estanque profundo, y cae hasta el fondo (figura). En este caso, la fuerza de resistencia del fluido está dada por la ecuación de resistencia del fluido a baja rapidez. ¿Cómo cambian la aceleración, velocidad y posición de la roca con el tiempo?
+            
+        \end{minipage}
+
+        \columnbreak
+
+        \begin{minipage}{0.6\textwidth}
+            \centering
+
+            \includegraphics[width=0.6\textwidth]{img/3.3-6.png}
+        \end{minipage}
+    \end{multicols}
+
+    \par Si observamos el diagrama de cuerpo libre podemos ver que $\Sigma F_x = 0$ entonces solo tomamos en cuenta la componente $y$:
+
+    \[ \Sigma F_y = mg + (-f) = mg + (-kv_y) = ma_y \]
+
+    \par Al principio, cuando la roca empieza a moverse, $v_y = 0$, la fuerza de resistencia es cero y la aceleración inicial es $a_y = g$. Al aumentar la rapidez, también se incrementa la fuerza de resistencia hasta ser igual en magnitud al peso. Ahora, $mg - kv_y = 0$, la aceleración se vuelve cero y ya no aumenta la rapidez. A esta rapidez final $v_t$, se le llama \bl{rapidez terminal}, y esta dada por $mg - kv_t = 0$, es decir:
+
+    \[ v_t = \frac{mg}{k} \quad \quad \text{(\bl{rapidez terminal})} \]
+
+    \par La siguiente figura muestra cómo varían la aceleración, la velocidad y la posición con el tiempo.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/3.3-7.png}
+    \end{figure}
+
+    \newsubsection{Dinámica del movimiento circular}
+
+    \par Cuando una partícula se mueve en un círculo con rapidez constante, su aceleración siempre es hacia el centro del círculo (perpendicular a la velocidad instantánea). La magnitud $a_{rad}$ de la aceleración es constante y está dada en términos de la rapidez $v$ y el radio $R$ del círculo por
+
+    \definicion{
+        \centering
+        \( a_{rad} = \frac{v^2}{R} \) \quad \quad (movimiento circular uniforme)
+    }
+
+    \par El subíndice “$rad$” nos recuerda que en cada punto la aceleración siempre es radial hacia el centro del círculo, perpendicular a la velocidad instantánea. Se le denomina \bl{aceleración centrípeta}.
+
+    \vspace{0.5cm}
+
+    \begin{multicols}{2}
+
+        \begin{minipage}{0.5\textwidth}
+            \par El movimiento circular uniforme, como todos los movimientos de una partícula, se rige por la segunda ley de Newton. Para hacer que la partícula acelere hacia el centro del círculo, la fuerza neta $\Sigma \vec{F}$ sobre la partícula debe estar dirigida siempre hacia el centro. La magnitud de la aceleración es constante, así que la magnitud $F_{net}$ de la fuerza neta también debe ser constante. Si deja de actuar la fuerza neta hacia adentro, la partícula saldrá disparada en una línea recta tangente al círculo (ver figura).
+        \end{minipage}
+
+        \columnbreak
+
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.7\textwidth]{img/3.3-8.png}
+        \end{minipage}
+
+    \end{multicols}
+
+    \par ...
+
+
+    \newsubsection{Fuerzas fundamentales de la naturaleza}
+
+    \par Hemos visto fuerzas de varios tipos —peso, tensión, fricción, resistencia de fluidos y la fuerza normal— y veremos otras más al seguir estudiando física. Pero, ¿cuántas clases distintas de fuerzas hay? Actualmente, se considera que todas las fuerzas son expresiones de tan sólo cuatro clases de fuerzas o interacciones fundamentales entre las partículas.
+
+    \begin{multicols}{2}
+
+        \begin{minipage}{0.6\textwidth}
+
+            \par Las \bl{interacciones gravitacionales} incluyen la fuerza familiar del peso, que se debe a la acción de la atracción gravitacional terrestre sobre un cuerpo. La mutua atracción gravitacional entre las diferentes partes de la Tierra mantienen a nuestro planeta unido (figura a).
+
+            \vspace{0.2cm}
+
+            \par Las \bl{interacciones electromagnéticas}, incluye las fuerzas eléctricas y magnéticas. Si nos frotamos un peine por el cabello, al final el peine tendrá una carga eléctrica; es posible usar la fuerza eléctrica para atraer trocitos de papel. Todos los átomos contienen carga eléctrica positiva y negativa, así que átomos y moléculas pueden ejercer fuerzas eléctricas unos sobre otros (figura b).
+
+            \vspace{0.2cm}
+
+            \par Las otras dos clases de interacciones son menos conocidas. La \bl{interacción fuerte} mantiene unido el núcleo de un átomo. Los núcleos contienen neutrones (eléctricamente neutros) y protones (con carga positiva). La fuerza eléctrica entre protones hace que se repelan mutuamente; la enorme fuerza de atracción entre las partículas nucleares contrarresta esta repulsión y mantiene el núcleo estable. En este contexto, la interacción fuerte también se denomina fuerza nuclear fuerte; tiene un alcance mucho menor que las interacciones eléctricas, pero es mucho más fuerte dentro de ese alcance. La interacción fuerte juega un papel fundamental en las reacciones termonucleares que ocurren en el núcleo del Sol, y que generan el calor y su luz (figura c).
+
+            \vspace{0.2cm}
+
+            \par Por último, tenemos la \bl{interacción débil} cuyo alcance es tan pequeño que es relevante sólo a una escala de núcleo o menor. La interacción débil causa una forma común de radioactividad, llamada desintegración beta, en la que un neutrón de un núcleo radioactivo se transforma en protón al tiempo que expulsa un electrón y una partícula casi sin masa llamada antineutrino electrónico. La interacción débil entre un antineutrino y la materia ordinaria es tan tenue que el antineutrino fácilmente podría atravesar una pared de plomo ¡de un millón de kilómetros de espesor! Incluso cuando una estrella gigante sufrió una explosión cataclísmica llamada supernova, la mayoría de la energía fue liberada mediante la interacción débil (figura d).
+
+        \end{minipage}
+
+        \columnbreak
+
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            \includegraphics[width=0.6\textwidth]{img/3.3-9.png}
+        \end{minipage}
+    \end{multicols}
+
+    \vspace{2cm}
+
+    \newsection{Trabajo y Energía Cinética}
+
+    \par En este capítulo nos concentraremos en la mecánica. Conoceremos una importante forma de energía, la energía cinética o la energía de movimiento, y su relación con el concepto de trabajo. También consideraremos la potencia, que es la rapidez con que se realiza trabajo.
+
+    \newsubsection{Trabajo}
+
+    \par En esta sección aprenderemos cómo se define el trabajo y cómo se calcula en diversas situaciones que implican fuerzas constantes. Aunque ya sabemos cómo resolver problemas donde las fuerzas son constantes, el concepto de trabajo nos resultará útil. Más adelante en este capítulo deduciremos la relación entre trabajo y energía cinética, y la aplicaremos después en problemas donde las fuerzas no son constantes.
+
+    \par Estos tres ejemplos de trabajo —mover un sofá, levantar una pila libros y empujar un automóvil— tienen algo en común. En ellos realizamos trabajo ejerciendo una fuerza sobre un cuerpo mientras éste se mueve de un lugar a otro, es decir, sufre un desplazamiento. Efectuamos más trabajo si la fuerza es mayor (empujamos más fuerte el auto) o si el desplazamiento es mayor (lo empujamos una mayor distancia).
+
+    \par El físico define el trabajo con base en estas observaciones. Considere un cuerpo que sufre un desplazamiento de magnitud $s$ en línea recta. (Por ahora, supondremos que todo cuerpo puede tratarse como partícula y despreciaremos cualquier rotación o cambio en la forma del cuerpo.) Mientras el cuerpo se mueve, una fuerza constante $\vec{F}$ actúa sobre él en la dirección del desplazamiento $\vec{s}$. Definimos el trabajo $W$ realizado por esta fuerza constante en dichas condiciones como el producto de la magnitud $F$ de la fuerza y la magnitud $s$ del desplazamiento:
+
+    \definicion{
+        \centering
+        \(W = Fs\) \text{(fuerza constante en dirección del desplazamiento rectilíneo)}
+    }
+
+    \par La unidad de trabajo en el SI es el joule (que se abrevia $J$ y se pronuncia “yul”,nombrada así en honor del físico inglés del siglo XIX James Prescott Joule). En el SI la unidad de fuerza es el newton y la unidad de distancia es el metro, así que 1 joule equivale a un new-ton-metro ($N \cdot m$):
+
+    \[1 J = 1 N \cdot m\]
+
+    \par En el sistema británico, la unidad de fuerza es la libra (Ib), la unidad de distancia es el pie (ft), y la unidad de trabajo es el pie-libra ($ft \cdot Ib$). Estas conversiones son útiles:
+
+    \[1 J =  0.7376 ft \cdot 1Ib \quad \quad  1 ft \cdot lb = 1.356 J\]
+
+    \vspace{0.5cm}
+
+    \par Pensemos en una persona que empuja un automóvil averiado. Si lo empuja a lo largo de un desplazamiento $\vec{s}$ con una fuerza constante $\vec{F}$ en la dirección del movimiento, la cantidad de trabajo que efectúa sobre el auto está dada por la ecuación:$W = Fs$. Sin embargo, ¿y si la persona hubiera empujado con un ángulo $\phi$ con respecto al desplazamiento del auto (figura)?
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/5.1-1.png}
+        
+    \end{figure}
+    
+    \par Entonces $\vec{F}$ tiene una componente $F_{\parallel} = F cos \phi$ en la dirección del desplazamiento y una componente $F_{\perp} = F sin \phi$ que actúa perpendicular al desplazamiento.
+
+    \par En este caso, sólo la componente paralela $F_{\parallel}$ es eficaz para mover el auto, por lo que definimos el trabajo como el producto de esta componente de fuerza y la magnitud del desplazamiento. Por lo tanto:
+
+    \[W = Fs cos \phi \]
+
+    \par La ecuación tiene la forma del producto escalar de dos vectores. Ello nos permite escribir la ecuación de forma más compacta:
+
+    \[W = \vec{F} \cdot \vec{s}\]
+
+    \newex{Ejercicio 7. Trabajo efectuado por una fuerza constante}
+
+    \par a) Esteban ejerce una fuerza constante de magnitud $210N$ sobre el automóvil averiado de la figura anterior, mientras lo empuja una distancia de $18m$. Además, un neumático se desinfló, así que, para lograr que el auto avance al frente, Esteban debe empujarlo con un ángulo de $30^\circ$ con respecto a la dirección del movimiento. ¿Cuánto trabajo efectúa Esteban?
+
+    \par b) Con ánimo de ayudar, Esteban empuja un segundo automóvil averiado con una fuerza constante $\vec{F} = (160N)\hat{i} - (40N)\hat{j}$. El desplazamiento del automóvil es $\vec{s} = (14m)\hat{i} + (11m)\hat{j}$ ¿Cuánto trabajo efectúa Esteban en este caso?
+
+    \newex{Solución 7.}
+
+    \par ...
+
+    \newtitle{Trabajo: Positivo, negativo o cero}
+
+    \par En el ejercicio anterior, el trabajo efectuado al empujar los autos fue positivo. No obstante, es importante entender que el trabajo también puede ser negativo o cero. Ésta es la diferencia esencial entre la definición de trabajo en física y la definición “cotidiana” del mismo.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/5.1-2.png}
+    \end{figure}
+
+    \newtitle{Trabajo total}
+
+    \par ¿Cómo calculamos el trabajo cuando varias fuerzas actúan sobre un cuerpo? Podemos usar las ecuaciones anteriormente vistas para calcular el trabajo realizado por cada fuerza individual. Puesto que el trabajo es una cantidad escalar, el trabajo total $W_{tot}$ realizado por todas las fuerzas sobre el cuerpo es la suma algebraica de los trabajos realizados por las fuerzas individuales. Otra forma de calcular $W_{tot}$ es calcular la suma vectorial de las fuerzas (es decir, la fuerza neta) y usarla en vez de $\vec{F}$.
+
+    \newex{Ejercicio 8. Trabajo realizado por varias fuerzas}
+
+    \par Un granjero engancha su tractor a un trineo cargado con leña y lo arrastra 20 m sobre el suelo horizontal. El peso total del trineo y la carga es de $14700 N$. El tractor ejerce una fuerza constante de $5000 N$ a $36.9^\circ$ sobre la horizontal. Una fuerza de fricción de $3500 N$ se opone al movimiento del trineo. Calcule el trabajo realizado por cada fuerza que actúa sobre el trineo y el trabajo total de todas las fuerzas.
+
+    \newex{Solución 8.}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/5.1-3.png}
+    \end{figure}
+
+    \par ...
+    
+    \vspace{6cm}
+
+    \newsubsection{Energía cinética y el teorema trabajo-energía}
+
+    \par El trabajo total realizado por fuerzas externas sobre un cuerpo se relaciona con el desplazamiento de éste (los cambios en su posición), pero también está relacionado con los cambios en la rapidez del cuerpo. Para comprobarlo, considere la siguiente figura, que muestra tres ejemplos de un bloque que se desliza sobre una mesa sin fricción. Las fuerzas que actúan sobre el bloque son su peso $\vec{w}$, la fuerza normal $\vec{n}$ y la fuerza $\vec{F}$ ejercida por la mano.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/5.2-1.png}
+    \end{figure}
+    
+    \par Hagamos más cuantitativas tales observaciones. Considere una partícula con masa $m$ que se mueve en el eje $x$ bajo la acción de una fuerza neta constante de magnitud $F$ dirigida hacia el eje $+x$ (figura). La aceleración de la partícula es constante y está dada por la segunda ley de Newton, $F = m a_x$. Suponga que la rapidez cambia de $v_1$ a $v_2$ mientras la partícula sufre un desplazamiento $s = x_2 - x_1$ del punto $x_1$ al $x_2$.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{img/5.2-2.png}
+    \end{figure}
+
+    \par Primero buscamos una ecuación que solo relaciona $v$, $a_x$ y $s$ (el desplazamiento). Para ello utilizamos estas ecuaciones de MRUA:
+
+    \[\text{1.}\quad v = v_1 + a_xt\]
+
+    \[\text{1.}\quad x = x_1 + v_1t + \frac{1}{2}a_xt^2\]
+
+    \par Eliminamos el tiempo $t$ (utilizando 1.):
+
+    \[t = \frac{v-v_1}{a_x}\]
+
+    \par Sustituyendo en la ecuación de posición:
+
+    \[s = x - x_1 = v_1 t + \frac{1}{2} a_x t^2\]
+
+    \[s = v_1 \left(\frac{v-v_1}{a_x}\right)  + \frac{1}{2} a_x \left(\frac{v-v_1}{a_x}\right) ^2\]
+
+    \par Multiplicamos y simplificamos:
+
+    \[s = \frac{v_1 (v - v_1)}{a_x} + \frac{(v-v_1)^2}{2 a_x}\]
+
+    \par Multiplicamos todo por $2a_x$
+
+    \[ 2a_x s = 2 v_1 (v - v_1) + (v - v_1)^2 \]
+
+    \par Expandimos:
+
+    \[ 2a_x s = 2 v_1 v - 2 v_1^2 + v^2 - 2 v_1 v + v_1^2\]
+
+    \par Se cancelan los términos $2v_1v - 2v_1v$, y queda:
+
+    \[ 2a_x s = v^2 - v_1^2\]
+
+    \vspace{1cm}
+
+    \par Obeniendo una ecuación para la aceleración en función de la rapidez y el desplazamiento:
+
+    \[ a_x = \frac{v_2^2 - v_1^2}{2s}\]
+
+    \par Al multiplicar esta ecuación por $m$ y sustituir $m a_x$ por la fuerza neta $F$, obtenemos
+
+    \[ F = m a_x = m \frac{v_2^2 - v_1^2}{2s}\]
+
+    \[\text{(5.2-1)} \quad Fs = \frac{1}{2} m v_2^2 - \frac{1}{2} m v_1^2\]
+
+    El producto $Fs$ es el trabajo efectuado por la fuerza neta $F$ y, por lo tanto, es igual al trabajo total $W_{tot}$ efectuado por todas las fuerzas que actúan sobre la partícula. Llamamos a la cantidad $\frac{1}{2}mv^2$ la \bl{energía cinética} $K$ de la partícula (definición de energía cinética):
+
+    \definicion{
+        \centering
+        \( K = \frac{1}{2}mv^2 \quad \quad \text{(definición de energía cinética)} \)
+    }
+
+    \par Igual que el trabajo, la energía cinética de una partícula es una cantidad escalar; sólo depende de la masa y la rapidez de la partícula, no de su dirección de movimiento. Un automóvil (visto como partícula) tiene la misma energía cinética yendo al norte a $10 m/s$ que yendo al este a $10 m/s$. La energía cinética nunca puede ser negativa, y es cero sólo si la partícula está en reposo.
+
+    \par Ahora podemos interpretar la ecuación (5.2-1) en términos de trabajo y energía cinética.
+
+    \definicion{
+        \par El trabajo efectuado por la fuerza neta sobre una partícula es igual al cambio de energía cinética de la partícula:
+        \[ W_{tot} = K_2 - K_1 = \Delta K \]
+    }
+
+    \par Éste es el resultado del \bl{teorema trabajo-energía}.
+
+    \newex{Ejercicio 9. Uso de trabajo y energía para calcular rapidez}
+
+    \par Supongamos que un trineo tiene una rapidez inicial $v_1$ de $2.0 m/s$. ¿Cuál es la rapidez final del trineo después de avanzar 20 m? Con $w = 14700 N$ y $W_{tot} = 10000J$
+
+    \newex{Solución 9.}
+
+    \par Para calcular $v_2$, usaremos el hecho de que $K = \frac{1}{2}m v^2$
+
+    \[ K_2 = W_{tot} + K_1 \]
+
+    \par Para calcular $K_2$, necesitamos calcular $K_1$:
+
+    \[ K_1 = \frac{1}{2} m v_1^2 \]
+
+    \par Para calcularla buscamos el valor de la masa:
+
+    \[ m = \frac{w}{g} = \frac{14700}{9.8} \approx 1430 kg \]
+
+    \par Luego
+
+    \[ K_1 = \frac{1}{2} \cdot 1430 kg \cdot (2.0 m/s)^2 = \frac{1}{2} \cdot 1430 kg \cdot 4.0 m^2/s^2 \approx 2860 J \]
+
+    \par Ahora estamos listos para calcular $K_2$:
+
+    \[ K_2 = W_{tot} + K_1 = 10000 J + 2860 J = 12860 J \Longrightarrow  \]
+
+    \[ \Longrightarrow 12860 J = \frac{1}{2}m v_2^2 \Longrightarrow v_2^2 = \frac{12860 J}{1/2 \cdot 1430 kg} \approx 18 m^2/s^2 \]
+
+    \[ v_2 = \sqrt{18 m^2/s^2} \approx 4.2 m/s \]
 
 \end{document}
