@@ -66,6 +66,19 @@
     \vspace{0.5cm}
 }
 
+\newcommand{\ladoALado}[4]{
+    \begin{minipage}[t]{#3\textwidth}
+        \vspace{0pt}
+        #1
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{#4\textwidth}
+        \vspace{0pt}
+        \centering
+        \includegraphics[width=0.8\linewidth]{#2}
+    \end{minipage}
+}
+
 % --------------- ENCABEZADO ---------------
 \title{Apunte Física 1}
 \author{Luca Di Bene}
@@ -98,11 +111,13 @@
         \item \underline{Evaluar la respuesta}: Verificar si tiene sentido físico.
     \end{enumerate} 
 
+    \newtitle{Modelos idealizados}
+    
     \begin{multicols}{2}
 
     \begin{center}
     \begin{minipage}[t]{0.60\textwidth}
-    \newtitle{Modelos idealizados}
+    
         \smallskip
 
         \par En física, simplificamos los sistemas complejos creando \bl{modelos idealizados} que omiten detalles irrelevantes. Estos modelos son válidos dentro de ciertos límites, como el modelo de caída libre de Galileo que omite la resistencia del aire.
@@ -113,7 +128,7 @@
     \hfill
     \columnbreak
     
-    \begin{minipage}[t]{0.35\textwidth}
+    \begin{minipage}[t]{0.25\textwidth}
 
         \bigskip
         \par Para simplificar el análisis de a) una pelota de béisbol lanzada al aire, usamos b) un modelo idealizado.
@@ -452,30 +467,21 @@
 
     \newsubsection{Masa y Peso}
 
-    \begin{multicols}{2}
-        \begin{minipage}[t]{0.7\textwidth}
-            \par Es común usar incorrecta e indistintamente los términos \bl{masa} y \bl{peso} en las conversaciones cotidianas. Es absolutamente indispensable entender claramente las diferencias entre estas dos cantidades físicas.
+    \ladoALado{
+        \par Es común usar incorrecta e indistintamente los términos \bl{masa} y \bl{peso} en las conversaciones cotidianas. Es absolutamente indispensable entender claramente las diferencias entre estas dos cantidades físicas.
 
-            \par La \bl{masa} Caracteriza las Propiedades inerciales de un cuerpo. A mayor masa, se necesitará más fuerza Para causar una aceleración dada.
+        \par La \bl{masa} Caracteriza las Propiedades inerciales de un cuerpo. A mayor masa, se necesitará más fuerza Para causar una aceleración dada.
 
-            \par El \bl{peso}, en cambio, es una fuerza ejercida sobre un cuerpo por la atracción de la Tierra.
+        \par El \bl{peso}, en cambio, es una fuerza ejercida sobre un cuerpo por la atracción de la Tierra.
 
-            \par Para entender la relación entre masa y peso, note que un cuerpo en caída libre tiene una aceleración igual a gy, Por la segunda ley de Newton, una fuerza produce esa aceleración. Si un cuerpo de masam cae con una aceleración $\vec{g}$ con $ \lvert \vec{g} \rvert = 9.8 \text{m/s}^2 $, entonces: $\vec{w} = m \vec{g}$
-        \end{minipage}
-
-        \columnbreak
-
-        \begin{minipage}[t]{0.7\textwidth}
-            \begin{figure}[H]
-                \centering
-                \includegraphics[scale=1]{img/2.4-1.png}
-            \end{figure}
-        \end{minipage}
-    \end{multicols}
+        \par Para entender la relación entre masa y peso, note que un cuerpo en caída libre tiene una aceleración igual a gy, Por la segunda ley de Newton, una fuerza produce esa aceleración. Si un cuerpo de masam cae con una aceleración $\vec{g}$ con $ \lvert \vec{g} \rvert = 9.8 \text{m/s}^2 $, entonces: $\vec{w} = m \vec{g}$
+    }{img/2.4-1.png}{0.7}{0.3}
 
     \newtitle{Variación de g con la ubicación}
 
     \par En la tierra se usa $g \approx 9,80 m/s^2$, Pero varía entre $9,78$ y $9,82 m/s^2$. Esa variación se debe a la forma de la tierra y su rotación. El peso cambia con g, Pero la masa no.
+
+    \vspace{3cm}
 
     \newtitle{Medición de masa y peso}
 
@@ -643,16 +649,13 @@
 
     \par Una fuerza importante en muchos aspectos de nuestra vida es la fricción. El aceite de un motor automotriz reduce la fricción entre piezas móviles; no obstante, sin fricción entre los neumáticos y el asfalto, el automóvil no podría avanzar ni dar vuelta.
 
+    \vspace{7cm}
+
     \newtitle{Fricción cinética y estática}
 
-    \begin{multicols}{2}
+    \ladoALado{
         \par Primero, cuando un cuerpo descansa o se desliza sobre una superficie, podemos representar la fuerza de contacto que la superficie ejerce sobre el cuerpo en términos de componentes de fuerza perpendiculares y paralelos a la superficie (figura). El vector componente paralelo a la superficie (y perpendicualr a n ) es la fuerza de fricción, denotada con $\vec{f}$. La dirección de la fuerza de fricción siempre es opuesta al movimiento relativo de las dos superficies.
-
-        \begin{figure}[H]
-            \centering
-            \includegraphics[scale=0.6]{img/3.3-1.png}
-        \end{figure}
-    \end{multicols}
+    }{img/3.3-1.png}{0.6}{0.4}
 
     \par El tipo de fricción que actúa cuando un cuerpo se desliza sobre una superficie es la \bl{fuerza de fricción cinética $\vec{f}_k$}. La magnitud de esta fuerza suele aumentar al aumentar la fuerza normal. En muchos casos, la magnitud de la fuerza de fricción cinética $f_k$ experimental es aproximadamente proporcional a la magnitud n de la fuerza normal. En tales casos, representamos la relación con la ecuación:
 
@@ -831,20 +834,9 @@
 
     \vspace{2cm}
 
-    \begin{multicols}{2}
-        \begin{minipage}{0.6\textwidth}
-            \par Consideremos esta situación: suponga que usted suelta una roca en la superficie de un estanque profundo, y cae hasta el fondo (figura). En este caso, la fuerza de resistencia del fluido está dada por la ecuación de resistencia del fluido a baja rapidez. ¿Cómo cambian la aceleración, velocidad y posición de la roca con el tiempo?
-            
-        \end{minipage}
-
-        \columnbreak
-
-        \begin{minipage}{0.6\textwidth}
-            \centering
-
-            \includegraphics[width=0.6\textwidth]{img/3.3-6.png}
-        \end{minipage}
-    \end{multicols}
+    \ladoALado{
+        \par Consideremos esta situación: suponga que usted suelta una roca en la superficie de un estanque profundo, y cae hasta el fondo (figura). En este caso, la fuerza de resistencia del fluido está dada por la ecuación de resistencia del fluido a baja rapidez. ¿Cómo cambian la aceleración, velocidad y posición de la roca con el tiempo?
+    }{img/3.3-6.png}{0.6}{0.4}
 
     \par Si observamos el diagrama de cuerpo libre podemos ver que $\Sigma F_x = 0$ entonces solo tomamos en cuenta la componente $y$:
 
@@ -874,20 +866,9 @@
 
     \vspace{0.5cm}
 
-    \begin{multicols}{2}
-
-        \begin{minipage}{0.5\textwidth}
-            \par El movimiento circular uniforme, como todos los movimientos de una partícula, se rige por la segunda ley de Newton. Para hacer que la partícula acelere hacia el centro del círculo, la fuerza neta $\Sigma \vec{F}$ sobre la partícula debe estar dirigida siempre hacia el centro. La magnitud de la aceleración es constante, así que la magnitud $F_{net}$ de la fuerza neta también debe ser constante. Si deja de actuar la fuerza neta hacia adentro, la partícula saldrá disparada en una línea recta tangente al círculo (ver figura).
-        \end{minipage}
-
-        \columnbreak
-
-        \begin{minipage}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.7\textwidth]{img/3.3-8.png}
-        \end{minipage}
-
-    \end{multicols}
+    \ladoALado{
+        \par El movimiento circular uniforme, como todos los movimientos de una partícula, se rige por la segunda ley de Newton. Para hacer que la partícula acelere hacia el centro del círculo, la fuerza neta $\Sigma \vec{F}$ sobre la partícula debe estar dirigida siempre hacia el centro. La magnitud de la aceleración es constante, así que la magnitud $F_{net}$ de la fuerza neta también debe ser constante. Si deja de actuar la fuerza neta hacia adentro, la partícula saldrá disparada en una línea recta tangente al círculo (ver figura).
+    }{img/3.3-8.png}{0.6}{0.4}
 
     \par ...
 
@@ -895,34 +876,23 @@
     \newsubsection{Fuerzas fundamentales de la naturaleza}
 
     \par Hemos visto fuerzas de varios tipos —peso, tensión, fricción, resistencia de fluidos y la fuerza normal— y veremos otras más al seguir estudiando física. Pero, ¿cuántas clases distintas de fuerzas hay? Actualmente, se considera que todas las fuerzas son expresiones de tan sólo cuatro clases de fuerzas o interacciones fundamentales entre las partículas.
+    
+    \ladoALado{
+        \par Las \bl{interacciones gravitacionales} incluyen la fuerza familiar del peso, que se debe a la acción de la atracción gravitacional terrestre sobre un cuerpo. La mutua atracción gravitacional entre las diferentes partes de la Tierra mantienen a nuestro planeta unido (figura a).
 
-    \begin{multicols}{2}
+        \vspace{0.2cm}
 
-        \begin{minipage}{0.6\textwidth}
+        \par Las \bl{interacciones electromagnéticas}, incluye las fuerzas eléctricas y magnéticas. Si nos frotamos un peine por el cabello, al final el peine tendrá una carga eléctrica; es posible usar la fuerza eléctrica para atraer trocitos de papel. Todos los átomos contienen carga eléctrica positiva y negativa, así que átomos y moléculas pueden ejercer fuerzas eléctricas unos sobre otros (figura b).
 
-            \par Las \bl{interacciones gravitacionales} incluyen la fuerza familiar del peso, que se debe a la acción de la atracción gravitacional terrestre sobre un cuerpo. La mutua atracción gravitacional entre las diferentes partes de la Tierra mantienen a nuestro planeta unido (figura a).
+        \vspace{0.2cm}
 
-            \vspace{0.2cm}
+        \par Las otras dos clases de interacciones son menos conocidas. La \bl{interacción fuerte} mantiene unido el núcleo de un átomo. Los núcleos contienen neutrones (eléctricamente neutros) y protones (con carga positiva). La fuerza eléctrica entre protones hace que se repelan mutuamente; la enorme fuerza de atracción entre las partículas nucleares contrarresta esta repulsión y mantiene el núcleo estable. En este contexto, la interacción fuerte también se denomina fuerza nuclear fuerte; tiene un alcance mucho menor que las interacciones eléctricas, pero es mucho más fuerte dentro de ese alcance. La interacción fuerte juega un papel fundamental en las reacciones termonucleares que ocurren en el núcleo del Sol, y que generan el calor y su luz (figura c).
 
-            \par Las \bl{interacciones electromagnéticas}, incluye las fuerzas eléctricas y magnéticas. Si nos frotamos un peine por el cabello, al final el peine tendrá una carga eléctrica; es posible usar la fuerza eléctrica para atraer trocitos de papel. Todos los átomos contienen carga eléctrica positiva y negativa, así que átomos y moléculas pueden ejercer fuerzas eléctricas unos sobre otros (figura b).
+        \vspace{0.2cm}
 
-            \vspace{0.2cm}
-
-            \par Las otras dos clases de interacciones son menos conocidas. La \bl{interacción fuerte} mantiene unido el núcleo de un átomo. Los núcleos contienen neutrones (eléctricamente neutros) y protones (con carga positiva). La fuerza eléctrica entre protones hace que se repelan mutuamente; la enorme fuerza de atracción entre las partículas nucleares contrarresta esta repulsión y mantiene el núcleo estable. En este contexto, la interacción fuerte también se denomina fuerza nuclear fuerte; tiene un alcance mucho menor que las interacciones eléctricas, pero es mucho más fuerte dentro de ese alcance. La interacción fuerte juega un papel fundamental en las reacciones termonucleares que ocurren en el núcleo del Sol, y que generan el calor y su luz (figura c).
-
-            \vspace{0.2cm}
-
-            \par Por último, tenemos la \bl{interacción débil} cuyo alcance es tan pequeño que es relevante sólo a una escala de núcleo o menor. La interacción débil causa una forma común de radioactividad, llamada desintegración beta, en la que un neutrón de un núcleo radioactivo se transforma en protón al tiempo que expulsa un electrón y una partícula casi sin masa llamada antineutrino electrónico. La interacción débil entre un antineutrino y la materia ordinaria es tan tenue que el antineutrino fácilmente podría atravesar una pared de plomo ¡de un millón de kilómetros de espesor! Incluso cuando una estrella gigante sufrió una explosión cataclísmica llamada supernova, la mayoría de la energía fue liberada mediante la interacción débil (figura d).
-
-        \end{minipage}
-
-        \columnbreak
-
-        \begin{minipage}{0.6\textwidth}
-            \centering
-            \includegraphics[width=0.6\textwidth]{img/3.3-9.png}
-        \end{minipage}
-    \end{multicols}
+        
+    }{img/3.3-9.png}{0.6}{0.33}
+    \par Por último, tenemos la \bl{interacción débil} cuyo alcance es tan pequeño que es relevante sólo a una escala de núcleo o menor. La interacción débil causa una forma común de radioactividad, llamada desintegración beta, en la que un neutrón de un núcleo radioactivo se transforma en protón al tiempo que expulsa un electrón y una partícula casi sin masa llamada antineutrino electrónico. La interacción débil entre un antineutrino y la materia ordinaria es tan tenue que el antineutrino fácilmente podría atravesar una pared de plomo ¡de un millón de kilómetros de espesor! Incluso cuando una estrella gigante sufrió una explosión cataclísmica llamada supernova, la mayoría de la energía fue liberada mediante la interacción débil (figura d).
 
     \vspace{2cm}
 
@@ -1116,5 +1086,138 @@
     \[ \Longrightarrow 12860 J = \frac{1}{2}m v_2^2 \Longrightarrow v_2^2 = \frac{12860 J}{1/2 \cdot 1430 kg} \approx 18 m^2/s^2 \]
 
     \[ v_2 = \sqrt{18 m^2/s^2} \approx 4.2 m/s \]
+
+    \newex{Ejercicio 10. Fuerzas sobre un martillo}
+
+    \par En un martinete, un martillo de acero con masa de $200 kg$ se levanta $3.00 m$ sobre el tope de una viga en forma de I vertical, que se está clavando en el suelo. El martillo se suelta, metiendo la viga-I otros $7.4 cm$ en el suelo. Los rieles verticales que guían el martillo ejercen una fuerza de fricción constante de $60 N$ sobre éste. Use el teorema trabajo-energía para determinar 
+
+    \begin{list}{}{}
+        \item a) la rapidez del martillo justo antes de golpear la viga-I y
+        \item b) la fuerza media que el martillo ejerce sobre la viga-I. Ignore los efectos del aire.
+    \end{list}
+
+    \newex{Solución 10.}
+
+    \par a) Primero calculamos el trabajo realizado por la caida del martillo:
+
+    \[ W_{tot} = (mg - f_{k}) \cdot 3.00 m = (200 \cdot 9.8 N - 60 N) \cdot 3.00 m = 5700 J\]
+
+    \par Sabemos que en el punto $P_1$ la velocidad es 0, entonces:
+
+    \[ K_1 = \frac{1}{2} \cdot 200 kg \cdot 0^2 = 0 \]
+
+    \par Entonces tenemos una ecuación para descubrir $K_2$:
+
+    \[ K_2 = W_{tot} + K_1 = 5700 J + 0 = 5700 J \]
+
+    \par Y por definición de energía cinética:
+
+    \[ 5700J = \frac{1}{2} \cdot 200 kg \cdot v_2^2 \]
+
+    \[ v_2^2 = \frac{5700 J}{1/2 \cdot 200 kg} = 57 m^2/s^2 \]
+
+    \[ v_2 = \sqrt{57 m^2/s^2} \approx 7.55 m/s \]
+
+    \par Por lo que la rapidez del martillo justo antes de golpear la viga-I es de $7.55 m/s$.
+
+    \vspace{1cm}
+
+    \par b) Ahora para calcular la fuerza que el martillo ejerce sobre la viga-I, usaremos el teorema trabajo-energía:
+
+    \[ W_{tot} = (w - f_k - n) \cdot s_{23} = K_3 - K_2 \]
+
+    \par $K_3$ es igual a 0 ya que el martillo se detiene, para calcular la fuerza ejercida por el martillo despejaremos la fuerza normal $n$:
+
+    \[ n = w - f - \frac{K_3 - K_2}{s_{23}} = 1960 N - 60 N - \frac{0 - 5700 J}{0.0074 m} = 79000 N \]
+
+    \par Por lo tanto, por el par acción-reacción, la fuerza media que el martillo ejerce sobre la viga-I es igual que la fuerza normal que la viga ejerce sobre el martillo ($79000 N$).
+
+    \newtitle{Significado de la energía cinética}
+
+    \par El ejercicio 10 ilustra el significado físico de la energía cinética. El martillo se deja caer del reposo y, al golpear la viga-I, su energía cinética es igual al trabajo total realizado hasta ese punto por la fuerza neta. Esto se cumple en general: para acelerar una partícula de masa $m$ desde el reposo (cero energía cinética) hasta una rapidez $v$, el trabajo total efectuado sobre ella debe ser igual al cambio de energía cinética desde 0 hasta $K = \frac{1}{2}mv^2$:
+
+    \[ W_{tot} = K - 0 = K \]
+
+    \par Así, \bl{la energía cinética de una partícula es igual al trabajo total que se efectuó para acelerarla desde el reposo hasta su rapidez actual}. La definición $K = \frac{1}{2}mv^2$, no se eligió al azar: es la única definición que concuerda con esta interpretación de la energía cinética.
+
+    \newsubsection{Trabajo y energía con fuerza variable}
+
+    \par Hasta ahora hemos considerado sólo trabajo efectuado por fuerzas constantes. También analizamos únicamente movimiento rectilíneo. Podemos imaginar muchas situaciones en las que una fuerza que varía en magnitud, dirección o ambas cosas actúa sobre un cuerpo que sigue una trayectoria curva. Necesitamos poder calcular el trabajo realizado por la fuerza en estos casos más generales. Por fortuna, veremos que el teorema trabajo-energía se cumple aun cuando las fuerzas varían y la trayectoria del cuerpo no es recta.
+
+    \newtitle{Trabajo efectuado por una fuerza variable,
+movimiento rectilíneo}
+
+    \ladoALado{
+        \par Agreguemos sólo una complicación a la vez. Consideremos un movimiento rectilíneo en el eje $x$ con una fuerza cuya componente $x$ $Fx$ varía conforme se mueve el cuerpo. (Un ejemplo de la vida cotidiana es conducir un automóvil en una carretera recta, pero el conductor está acelerando y frenando constantemente.) Suponga que una partícula se mueve sobre el eje $x$ de $x_1$ a $x_2$ (figura). La figura b es una gráfica de la componente $x$ de la fuerza en función de la coordenada $x$ de la partícula. Para determinar el trabajo realizado por esta fuerza, dividimos el desplazamiento total en segmentos pequeños, $\Delta x_a$, $\Delta x_b$, etcétera (figura c). Aproximamos el trabajo realizado por la fuerza en el segmento Dxa como la componente $x$ media de fuerza $F_{ax}$ en ese segmento multiplicada por el desplazamiento $\Delta x_a$.  El trabajo realizado por la fuerza en el desplazamiento total de $x_1$ a $x_2$ es aproximadamente:
+
+        \[ W = F_{ax} \Delta x_a + F_{bx} \Delta x_b + \ldots \]
+
+    }{img/5.3-1.png}{0.5}{0.5}
+
+    \par En el límite donde el número de segmentos se hace muy grande y su anchura muy pequeña, la suma se convierte en la integral de $F_x$ de $x_1$ a $x_2$:
+
+    \definicion{
+        \centering
+        \( W = \int_{x_1}^{x_2} F_x \, dx \) \quad (componente x de fuerza variable, desplazamiento rectilíneo)
+    }
+
+    \par Si $F_x$, la componente $x$ de la fuerza, es constante puede sacarse de la integral de la ecuación:
+
+    \[ W = \int_{x_1}^{x_2} F_x \, dx = F_x \int_{x_1}^{x_2} dx = F_x (x_2 - x_1) \]
+
+    \par Pero $x_2 - x_1 = s$, el desplazamiento total de la partícula. Así, en el caso de una fuerza constante $F$, la ecuación indica que $W = Fs$, lo cual coincide con la anterior ecuación de trabajo.
+
+    \vspace{0.5cm}
+
+    \ladoALado{
+        \par Apliquemos ahora lo aprendido al resorte estirado. Para mantener un resorte estirado una distancia $x$ más allá de su longitud sin estiramiento, debemos aplicar una fuerza de igual magnitud en cada extremo (figura). Si el alargamiento $x$ no es excesivo, vemos que la fuerza aplicada al extremo derecho tiene una componente x directamente proporcional a $x$:
+    }{img/5.3-2.png}{0.6}{0.4}
+
+    \[ F_x = k x \quad \text{(fuerza requerida para estirar un resorte)} \]
+
+    \noindent donde k es una constante llamada constante de fuerza (o constante de resorte) del resorte. Las unidades de k son fuerza dividida entre distancia. La observación de que el alargamiento (no excesivo) es proporcional a la fuerza fue hecha por Robert Hooke en 1678 y se conoce como \bl{ley de Hooke}.
+    
+    \par El trabajo realizado por $F_x$ cuando el alargamiento va de cero a un valor máximo $X$ es
+
+    \[ W = \int_{0}^{X} F_x \, dx = \int_{0}^{X} k x \, dx = \frac{1}{2} k X^2 \]
+
+    \par Esta ecuación indica que el trabajo es la fuerza media $\frac{k x}{2}$ multiplicada por el desplazamiento total $X$. Vemos que el trabajo total es proporcional al cuadrado del alargamiento final $X$. Para estirar un resorte ideal 2 cm, necesitamos efectuar cuatro veces más trabajo que para estirarlo 1 cm.
+
+    \par Si el resorte ya está estirado una distancia $x_1$, el trabajo necesario para estirarlo a una distancia mayor $x_2$ es
+
+    \[ W = \int_{x_1}^{x_2} F_x \, dx = \int_{x_1}^{x_2} k x \, dx = \frac{1}{2} k x_2^2 - \frac{1}{2} k x_1^2 \]
+
+    \newex{Ejercicio 11. Trabajo sobre una balanza de resorte}
+
+    \par Una mujer que pesa $600 N$ se sube a una báscula que contiene un resorte rígido. En equilibrio, el resorte se comprime 1.0 cm bajo su peso. Calcule la constante de fuerza del resorte y el trabajo total efectuado sobre él durante la compresión.
+
+    \newex{Solución 11.}
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{img/5.3-3.png}
+    \end{figure}
+
+    \par Por la ley de Hooke:
+
+    \[ F_x = k x \quad \Longrightarrow \quad k = \frac{F_x}{x} \]
+
+    \par Remplazando tenemos:
+
+    \[ k = \frac{-600 N}{-0.01 m} = 60000 N/m \]
+
+    \par Entonces la constante de fuerza de resorte es de $60000 N/m$.
+
+    \vspace{0.5cm}
+
+    \par Para calcular el trabajo total efectuado sobre el resorte, usaremos la ecuación de trabajo:
+
+    \[ W = \int_{x_1}^{x_2} F_x \, dx = \int_{x_1}^{x_2} k x \, dx = \frac{1}{2} k x_2^2 - \frac{1}{2} k x_1^2 \]
+
+    \par Tomando $x_1 = 0$ y $x_2 = -0.01 m$ tenemos:
+
+    \[ W = \frac{1}{2} \cdot 60000 N/m \cdot (-0.01 m)^2 - \frac{1}{2} \cdot 60000 N/m \cdot 0^2 = 3 J - 0 = 3 J \]
+
+    \[ W = 3 J \]
 
 \end{document}
