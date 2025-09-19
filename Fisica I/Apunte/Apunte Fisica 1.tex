@@ -19,7 +19,9 @@
 \usepackage{tikz}
 \usetikzlibrary{angles, quotes}
 \usepackage{float}
-\usepackage{hyperref}  
+
+\definecolor{linkcolor}{HTML}{00a7d1}
+\usepackage[colorlinks=true, allcolors=linkcolor]{hyperref}  
 
 
 % --------------- COLORES PERSONALIZADOS ---------------
@@ -30,16 +32,26 @@
 
 % --------------- COMANDOS PERSONALIZADOS ---------------
 \newcommand{\newsection}[1]{
-    \section{\centering \color{sectionColor} \bl{#1}}
+    \vspace{0.5cm}
+    {\color{sectionColor}
+    \centering
+    \section{\bl{#1}}}
+    \color{black}
+    \vspace{0.5cm}
 }
 
 \newcommand{\newsubsection}[1]{
-    \subsection{\color{sectionColor} #1}
+    \vspace{0.5cm}
+    \color{sectionColor}
+    \subsection{ #1}
+    \color{black}
+    \vspace{0.5cm}
 }
 
 \newcommand{\newtitle}[1]{
-    \vspace{0.5cm}
-    \noindent{\large \color{titleColor} \textbf{#1}}\\[0.2cm]
+    \color{titleColor}
+    \subsubsection{\textbf{#1}}
+    \color{black}
 }
 
 \newcommand{\newex}[1]{
@@ -1169,11 +1181,16 @@ movimiento rectilíneo}
 
     \vspace{0.5cm}
 
+    \newtitle{Resortes}
+
     \ladoALado{
         \par Apliquemos ahora lo aprendido al resorte estirado. Para mantener un resorte estirado una distancia $x$ más allá de su longitud sin estiramiento, debemos aplicar una fuerza de igual magnitud en cada extremo (figura). Si el alargamiento $x$ no es excesivo, vemos que la fuerza aplicada al extremo derecho tiene una componente x directamente proporcional a $x$:
     }{img/5.3-2.png}{0.6}{0.4}
 
-    \[ F_x = k x \quad \text{(fuerza requerida para estirar un resorte)} \]
+    \definicion{
+        \centering
+        \( F_x = k x \quad \text{(fuerza requerida para estirar un resorte, \bl{ley de Hooke})} \)
+    }
 
     \noindent donde k es una constante llamada constante de fuerza (o constante de resorte) del resorte. Las unidades de k son fuerza dividida entre distancia. La observación de que el alargamiento (no excesivo) es proporcional a la fuerza fue hecha por Robert Hooke en 1678 y se conoce como \bl{ley de Hooke}.
     
@@ -1219,5 +1236,341 @@ movimiento rectilíneo}
     \[ W = \frac{1}{2} \cdot 60000 N/m \cdot (-0.01 m)^2 - \frac{1}{2} \cdot 60000 N/m \cdot 0^2 = 3 J - 0 = 3 J \]
 
     \[ W = 3 J \]
+
+    \newtitle{Teorema trabajo-energía para movimiento rectilíneo, con fuerzas variables}
+
+    \par En la sección 5.2 dedujimos el teorema trabajo-energía, $W_{tot} = K_2 - K_1$, para el caso específico de movimiento rectilíneo con fuerza neta constante. Ahora podemos demostrar que dicho teorema se cumple aun si la fuerza varía con la posición.
+    \par Para ello, recordamos que la aceleración a de una partícula puede expresarse de varias formas. Usando $a_x = {dv_x}/{dt}$, $v_x = dx/dt$ y la regla de la cadena para derivadas:
+
+    \[ a_x = \frac{dv_x}{dt} =  \frac{dv_x}{dx} \frac{dx}{dt} = v_x \frac{dv_x}{dx}  \]
+
+    \par Con este resultado, la ecuación $W_{tot} = \int_{x_1}^{x_2} F_x \, dx$ nos dice que el trabajo total efectuado por la fuerza neta $F_x$ es
+
+    \[ W_{tot} = \int_{x_1}^{x_2} F_x \, dx = \int_{x_1}^{x_2} m a_x \, dx = \int_{x_1}^{x_2} m v_x \frac{dv_x}{dx} \, dx \]
+
+    \par Ahora, ($dv_x/dx$) $dx$ es el cambio de velocidad $dv_x$ durante el desplazamiento $dx$, así
+que podemos sustituir $dv_x$ por ($dv_x/dx$) $dx$ en la ecuación. Esto cambia la variable de integración de $x$ a $v_x$, así que cambiamos los límites de $x_1$ y $x_2$ a las velocidades correspondientes $v_1$ y $v_2$ en esos puntos:
+
+    \[ W_{tot} = \int_{v_1}^{v_2} m v_x \, dx \]
+
+    \par La integral de $v_xdv_x$ es $v_x^2/2$. Sustituyendo los límites, tenemos finalmente
+
+    \[ W_{tot} = \frac{1}{2} m v_2^2 - \frac{1}{2} m v_1^2 \]
+
+    \par Ésta es la ecuación que buscabamos. Por lo tanto, el teorema trabajo-energía es válido aun sin el supuesto de que la fuerza neta es constante.
+
+    \definicion{
+        \centering
+        \( W_{tot} = \int_{v_1}^{v_2} m v_x \, dv_x \quad \quad \text{(Teorema trabajo-energía, con fuerzas variables)} \)
+    }
+
+    \newex{Ejercicio 12. Movimiento con fuerza variable}
+
+    \par Un deslizador de riel de aire con masa de $0.100 kg$ se conecta al extremo del riel horizontal con un resorte cuya constante de fuerza es $20.0 N/m$. Inicialmente, el resorte no está estirado y el deslizador se mueve con rapidez de $1.50 m/s$ a la derecha. Calcule la distancia máxima $d$ que el deslizador se mueve a la derecha, 
+    
+    \begin{list}{}{}
+        \item a) si el riel está activado, de modo que no hay fricción; y
+        \item b) si se corta el suministro de aire al riel, de modo que hay fricción cinética con coeficiente $\mu_k = 0.47$.
+    \end{list}
+
+    \newex{Solución 12.}
+
+    \par Datos:
+
+    \begin{itemize}
+        \item $m = 0.100 kg$
+        \item $k = 20.0 N/m$
+        \item $v_1 = 1.50 m/s$
+    \end{itemize}
+
+    \par a) Primero diagramamos el problema:
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{img/5.3-4.png}
+    \end{figure}
+
+    \par el deslizador efectúa sobre el resorte un trabajo dado por la ecuación $ W = \frac{1}{2} k d^2 - \frac{1}{2} k d_0^2 = \frac{1}{2} k d^2 $, y el resorte sobre el deslizador un trabajo igual pero negativo: $-\frac{1}{2} k d^2$ como es el unico trabajo que es ejercido sobre el deslizador entonces $ W_{tot} = -\frac{1}{2} k d^2 $ por lo que utilizando el teorema trabajo-energía, con $K_1 = \frac{1}{2} m v_1^2$ y $K_2 = 0$, ya que la energia cinetica es cero al finalizar el movimiento, tenemos:
+
+    \[ -\frac{1}{2} k d^2 = 0 - \frac{1}{2} m v_1^2 = - \frac{1}{2} m v_1^2 \]
+
+    \[ k d^2 = m v_1^2 \]
+
+    \par Despejamos $d$
+
+    \[ d = \sqrt{\frac{m v_1^2}{k}} = \sqrt{\frac{0.1 kg \cdot (1.5 m/s)^2}{20 N/m}} \approx 0.106 \sqrt{kg \cdot m^2/s^2 \cdot m/N}  \]
+
+    \[ [d] = \sqrt{\cancel{kg} \cdot m^3/\cancel{s^2} \cdot \frac{1}{\cancel{kg} \cdot m/\cancel{s^2}}} = \sqrt{\frac{m^3}{m}} = \sqrt{m^2} = m \]
+
+    \[ d = 0.106 m = 10.6 cm \]
+
+    \par b) Primero diagramamos el problema:
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{img/5.3-5.png}
+    \end{figure}
+
+    \par Para calcular el trabajo total $W_{tot}$ tenemos que sumar el trabajo que ejerce la fricción cinética sobre el deslizador ($ - f_k d $) y el trabajo que ejerce el resorte sobre el deslizador ($-\frac{1}{2} k d^2$):
+
+    \[ -\frac{1}{2} k d^2 - f_k d = 0 - \frac{1}{2} m v_1^2 \]
+
+    \[ -\frac{1}{2} k d^2 - f_k d + \frac{1}{2} m v_1^2 = 0 \]
+
+    \[ (-10 N/m)d^2 + (-0.46 N)d + (0.11 N \cdot m) = 0 \]
+
+    \par Usamos la ecuación cuadrática para obtener la solución:
+
+    \[ d_{1,2} = \frac{(0.46 N) \pm \sqrt{ (0.46 N)^2 - 4 (-10 N/m) (0.11 N \cdot m)} }{-20 N/m} \]
+
+    \[ d_1 =  0.086 m \quad , \quad d_2 = -0.132 m \]
+
+    \par Como estamos buscando un valor positivo, elegimos $d_1 = 0.086 m = 8.6 cm$
+
+    \newtitle{Teorema trabajo-energía para movimientos en una curva}
+
+    \ladoALado{
+        \par Podemos generalizar nuestra definición de trabajo para incluir una fuerza que varía en dirección, no sólo en magnitud, con un desplazamiento curvo. Suponga que una partícula se mueve de P1 a P2 siguiendo una curva, como se muestra en la figura a. Dividimos la curva entre esos puntos en muchos desplazamientos vectoriales infinitesimales, siendo $d\vec{l}$ (diferencial de $\vec{l}$) uno representativo. Sea $\vec{F}$ la fuerza en un punto representativo de la trayectoria, y sea $\phi$ el ángulo entre $\vec{F}$ y $d\vec{l}$ en ese punto. De manera que el elemento pequeño de trabajo $dW$ realizado sobre la partícula durante el desplazamiento $d\vec{l}$ puede escribirse como
+
+        \[ dW = F \cos(\phi) dl = F_{\parallel} dl = \vec{F} \cdot d\vec{l} \]
+
+        \noindent donde $F_{\parallel} = F \cos(\phi)$ es la componente de $\vec{F}$ en la dirección paralela a $d\vec{l}$ (ﬁgura b). El trabajo total realizado por F sobre la partícula al moverse de P1 a P2 es, entonces:
+
+    }{img/5.3-6.png}{0.6}{0.4}
+
+    \definicion{
+        \centering
+        \( W = \int_{P_1}^{P_2} F \cos(\phi) dl = \int_{P_1}^{P_2} F_{\parallel} dl = \int_{P_1}^{P_2} \vec{F} \cdot d\vec{l} \)
+    }
+
+    \par ...
+
+    \newex{Ejercicio 13. Movimiento en una trayectoria curva I}
+
+    \par En un día de campo familiar, le piden a usted empujar a su odioso primo Morton en un columpio. El peso de Morton es $w$, la longitud de las cadenas es $R$, y usted lo empuja hasta que las cadenas forman un ángulo $\theta_0$ con la vertical. Para ello, usted ejerce una fuerza horizontal variable $\vec{F}$ que comienza en cero y aumenta gradualmente apenas lo suﬁciente para que Morton y el columpio se muevan lentamente y permanezcan casi en equilibrio. ¿Qué trabajo total realizan todas las fuerzas sobre Morton? ¿Qué trabajo realiza la tensión $T$ en las cadenas? ¿Qué trabajo efectúa usted aplicando la fuerza $\vec{F}$? (Ignore el peso de las cadenas y el asiento.)
+
+    \newex{Solución 13.}
+
+    \par Diagramamos el problema:
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{img/5.3-7.png}
+    \end{figure}
+
+    \par Como Morton esta en equilibrio sabemos que $\Sigma F_x = 0$ y $\Sigma F_y = 0$:
+
+    \[ \Sigma F_x = F + (-T \sin(\theta)) = 0 \quad \Longrightarrow \quad F = T \sin(\theta) \]
+
+    \[ \Sigma F_y = T \cos(\theta) + (-w) = 0 \quad \Longrightarrow \quad w = T \cos(\theta) \]
+
+    \par Dividiendo ambas expresiones obtenemos:
+
+    \[ \frac{F}{w} = \frac{\cancel{T} \sin(\theta)}{\cancel{T} \cos(\theta)} = \tan(\theta) \quad \Longrightarrow \quad F = w \tan(\theta) \]
+
+    \par Primero calculamos el trabajo que realiza $\vec{T}$ sobre Morton. Como $\vec{T}$ es perpendicular a la trayectoria $d\vec{l}$, el trabajo realizado es:
+
+    \[ dW = T_{\parallel} dl = T \cos(90^\circ) dl = 0 \cdot dl = 0 \]
+
+    \par Por lo que, el trabajo realizado por la tensión $T$ sobre Morton es 0.
+
+    \vspace{0.5cm}
+
+    \par Ahora calculamos el trabajo realizado por la fuerza $\vec{F}$ sobre Morton. Para ello debemos calcular la longitud del arco $s$ que es igual a $R \theta_0$ ($\theta$ radianes). Por lo tanto el desplazamiento $d\vec{l}$ tiene magnitud $dl = ds = R d\theta$ y el trabajo realizado es:
+
+    \[ W = \int_{P_1}^{P_2} \vec{F} \cdot d\vec{l} = \int_{s_1}^{s_2} F \cos(\theta) ds \]
+
+    \par Remplazando tenemos:
+
+    \[ W = \int_{0}^{\theta_0} (w \tan(\theta)) \cos(\theta) R d\theta = \int_{0}^{\theta_0} w R \sin(\theta) d\theta = w R \int_{0}^{\theta_0} \sin(\theta) d\theta \]
+
+    \par Terminando en
+
+    \[ W = wR (-\cos(\theta_0) + 1)\]
+
+    \par Ahora para calcular el trabajo total realizado por todas las fuerzas sobre Morton tenemos:
+
+    \[ W_{tot} = W_{F} + W_{T} = wR (-\cos(\theta_0) + 1) + 0 = wR (-\cos(\theta_0) + 1) \]
+
+    \newex{Ejercicio 14. Movimiento en una trayectoria curva II}
+
+    \par En el Ejercicio 13, el desplazamiento inﬁnitesimal $d\vec{l}$ tiene magnitud $ds$, su componente $x$ es $ds \cos(\theta)$ y su componente $y$ es $ds \sin(\theta)$. Por lo tanto, $d\vec{l} = \hat{i} [ds \cos(\theta)] + \hat{j} [ds \sin(\theta)]$. Use esta expresión y la ecuación $ W = \int_{P_1}^{P_2} \vec{F} \cdot d\vec{l} $ para calcular el trabajo efectuado durante el movimiento por la tensión de la cadena, por la fuerza de gravedad y por la fuerza F.
+
+    \newex{Solución 14.}
+
+    \par Tenemos $d\vec{l}$ expresados en componentes por lo que nos conviene expresar las fuerzas en componentes:
+
+    \begin{list}{$\bullet$}{}
+        \item $ \vec{T} = \hat{i}[-T \sin(\theta)] + \hat{j}[T \cos(\theta)]$
+        \item $ \vec{w} = \hat{j}[-w] $
+        \item $ \vec{F} = \hat{i}[F] $ 
+    \end{list}
+
+    \par Ahora calculamos el producto escalar de las fuerzas con $d\vec{l}$:
+
+    \begin{list}{}{}
+        \item $ \vec{T} \cdot d\vec{l} = [-T \sin(\theta)][ds \cos(\theta)] + [T \cos(\theta)][ds \sin(\theta)] = 0 $
+        \item $ \vec{w} \cdot d\vec{l} = [-w][ds \sin(\theta)] = -w  \sin(\theta) ds $
+        \item $ \vec{F} \cdot d\vec{l} = [F][ds \cos(\theta)] = F \cos(\theta) ds $
+    \end{list}
+
+    \par Ahora calculamos el trabajo realizado por el peso:
+
+    \[ W_{w} = \int_{P_1}^{P_2} \vec{w} \cdot d\vec{l} = \int_{P_1}^{P_2} -w \sin(\theta) ds = \int_{0}^{\theta_0} -w \sin(\theta) R d\theta = -w R \int_{0}^{\theta_0} \sin(\theta) d\theta \]
+
+    \[ W_{w} = -w R [ 1 - \cos(\theta_0) ] \]
+
+    \newsubsection{Potencia}
+
+    \par En el habla cotidiana, “potencia” suele emplearse como sinónimo de “energía” o “fuerza”. En física usamos una deﬁnición mucho más precisa: potencia es la rapidez con que se efectúa trabajo; al igual que el trabajo y la energía, la potencia es una cantidad escalar.
+
+    \par Si se realiza un trabajo $\Delta W$ en un intervalo $\Delta t$, el trabajo medio efectuado por unidad de tiempo o potencia media $P_{med}$ se deﬁne como
+
+    \definicion{
+        \centering
+        \( P_{med} = \frac{\Delta W}{\Delta t} \) \quad (potencia media)
+    }
+
+    \par La rapidez con que se efectúa trabajo quizá no sea constante. Podemos deﬁnir la \bl{potencia instantánea} $P$ como el cociente de la ecuación cuando $\Delta t$ se aproxima a cero:
+
+    \definicion{
+        \centering
+        \( P = \lim_{\Delta t \to 0} \frac{\Delta W}{\Delta t} \) \quad (potencia instantánea)
+    }
+
+    \par En el SI la unidad de potencia es el watt ($W$), llamada así por el inventor inglés James Watt. Un watt es igual a un joule por segundo:
+
+    \[ 1 W = 1 J/s \]
+
+    \par En el sistema británico, el trabajo se expresa en pie-libras, y la unidad de potencia es el pie-libra por segundo. También se usa una unidad mayor, el caballo de potencia (hp):
+
+    \[ 1 hp = 550 ft \cdot lb/s \]
+
+    \[ 1 hp = 746 W \]
+
+    \par El watt es una unidad común de potencia \textit{eléctrica}; una bombilla eléctrica de $100 W$ convierte $100 J$ de energía eléctrica en luz y calor cada segundo. Sin embargo, los watts no son inherentemente eléctricos.
+
+    \par En mecánica, también podemos expresar la potencia en términos de fuerza y velocidad.
+
+    \[ P = \frac{F_{\parallel} ds}{dt} = F_{\parallel} \frac{ds}{dt} = F_{\parallel} v \]
+
+    \par donde v es la magnitud de la velocidad instantánea. También podemos expresar la ecuación en términos del producto escalar:
+
+    \definicion{
+        \centering
+        \( P = \vec{F} \cdot \vec{v} \)
+    }
+
+    \newex{Ejercicio 15. Fuerza y potencia}
+
+    \par Cada uno de los dos motores a reacción de un avión Boeing 767 desarrolla un empuje (fuerza hacia adelante sobre el avión) de $197000 N$. Cuando el avión está volando a $250 m/s$ ($900 km/h$), ¿cuántos caballos de potencia desarrolla cada motor?
+
+    \newex{Solución 15.}
+
+    \par...
+
+    \newsection{Energía Potencial y Conservación de la Energía}
+
+    \par Cuando un clavadista se tira de un trampolín a la alberca, golpea el agua rápida­mente, con mucha energía cinética. ¿De dónde proviene esa energía? La res­puesta que dimos en el capítulo 6 fue que la fuerza gravitacional (su peso) realiza trabajo sobre el clavadista al caer. La energía cinética del clavadista —energía asociada con su \textit{movimiento}— aumenta en una cantidad igual al trabajo realizado.
+
+    \par Sin embargo, hay otra forma muy útil de ver el trabajo y la energía cinética. Este nuevo enfoque se basa en el concepto de \textit{energía potencial}, que es energía asociada a la posición de un sistema, no a su movimiento. En este enfoque, hay energía potencial gravitacional incluso cuando el clavadista está parado en el trampolín.
+
+    \par Demostraremos que, en algunos casos, la suma de las energías cinética y potencial de un sistema, llamada, energía mecánica total, es constante durante el movimiento del sistema. Esto nos llevará al enunciado general de la ley de conservación de la energía, que es uno de los principios más fundamentales y trascendentales de la ciencia.
+
+    \newsubsection{Energía potencial gravitacional}
+
+    \par En cualquier interacción, el cambio de energía cinética de una partícula es igual al trabajo total efectuado sobre la partícula por todas las fuerzas que actúan sobre ella.
+
+    \par En muchas situaciones, parece que se almacena energía en un sistema para recuperarse después. Por ejemplo, hay que efectuar trabajo para levantar una roca pesada sobre la cabeza. Parece razonable que, al levantar la roca en el aire, se está almacenando energía en el sistema, la cual se convierte después en energía cinética al dejar caer la roca.
+
+    \vspace{0.5cm}
+
+    \par Este ejemplo señala a la idea de una energía asociada con la posición de los cuerpos en un sistema. Este tipo de energía es una medida del \textit{potencial} o \textit{posibilidad} de efectuar trabajo. Al levantar una roca, existe la posibilidad de que la fuerza de gravitación realice trabajo sobre ella, pero sólo si la roca se deja caer al suelo. Por ello, la energía asociada con la posición se llama \bl{energía potencial}. Lo dicho sugiere que hay energía potencial asociada al peso de un cuerpo y a su altura sobre el suelo: la energía \textit{potencial gravitacional}.
+
+    \par Ahora tenemos \bl{dos} formas de describir lo que sucede cuando un cuerpo cae sin resistencia del aire. Una forma consiste en decir que disminuye la energía potencial gravitacional y aumenta la energía cinética del cuerpo que cae. La otra forma, que vimos en el capítulo 6, es que aumenta la energía cinética de un cuerpo que cae porque la fuerza de gravedad terrestre (el peso del cuerpo) realiza trabajo sobre el cuerpo. Más adelante en esta sección utilizaremos el teorema trabajo-energía para demostrar que estas dos descripciones son equivalentes.
+
+    \ladoALado{
+        \par Consideremos un cuerpo de masa m que se mueve en el eje y (vertical), como en la ﬁgura.  Las fuerzas que actúan sobre él son su peso, de magnitud $w = mg$, y tal vez otras; llamamos a la suma vectorial (resultante) de todas las otras fuerzas $\vec{F}_{otras}$. Suponemos que el cuerpo permanece tan cerca de la superﬁcie terrestre que el peso es constante. Queremos determinar el trabajo efectuado por el peso cuando el cuerpo cae de una altura $y_1$ sobre el origen a una altura menor $y_2$ (ﬁgura a). El peso y el desplazamiento tienen la misma dirección, así que el trabajo $W_{grav}$ efectuado sobre el cuerpo por su peso es positivo;
+
+        \[ W_{grav} = F s = w (y_1 - y_2) = mg y_1 - mg y_2 \]
+
+        \par Esta expresión también da el trabajo correcto cuando el cuerpo sube y $y_2$ es mayor que $y_1$ (ﬁgura b). En tal caso, la cantidad $y_1 - y_2$ es negativa y $W_{grav}$ es negativa porque el peso y el desplazamiento tienen direcciones opuestas.
+
+        \par La ecuación muestra que podemos expresar $W_{grav}$ en términos de los valores de la cantidad $mg y$ al principio y al ﬁnal del desplazamiento. Esta cantidad, el producto del peso $mg$ y la altura $y$ sobre el origen de las coordenadas, es la \bl{energía potencial gravitacional}, $U_{grav}$:
+
+    }{img/6.1-1.png}{0.6}{0.4}
+
+    \definicion{
+        \centering
+        $U_{grav} = mg y$ \quad \quad \text{(energía potencial gravitacional)}
+    }
+
+    \par Su valor inicial es $U_{grav,1} = mg y_1$ y su valor ﬁnal es $U_{grav,2} = mg y_2$. El cambio en $U_{grav}$ es su valor ﬁnal menos su valor inicial: $\Delta U_{grav} = U_{grav,2} - U_{grav,1}$. Podemos expresar el trabajo $W_{grav}$ realizado por la fuerza gravitacional durante el desplazamiento de $y_1$ a $y_2$ como
+
+    \definicion{
+        \centering
+        $ W_{grav} = U_{grav,1} - U_{grav,2} = -( U_{grav,2} - U_{grav,1}) = - \Delta U_{grav} $
+    }
+
+    \par El signo negativo de DUgrav es fundamental. Cuando el cuerpo sube, y aumenta, el trabajo realizado por la gravedad es negativo y la energía potencial gravitacional aumenta ($\Delta U{grav} > 0$). Si el cuerpo baja, y disminuye, la gravedad realiza trabajo positivo y la energía potencial gravitacional se reduce ($\Delta U{grav} < 0$).
+
+    \newtitle{Conservación de la energía mecánica (sólo fuerzas gravitacionales)}
+
+    \par Si quiere ver para qué sirve la energía potencial gravitacional, suponga que el peso del cuerpo es la única fuerza que actúa sobre él: $F_{otras} = 0$. Entonces, el cuerpo cae libremente sin resistencia del aire, y podría estar subiendo o bajando. Sea $v_1$ su rapidez en $y_1$ , y $v_2$ en $y_2$. El teorema trabajo-energía indica que el trabajo total efectuado sobre el cuerpo es igual al cambio en su energía cinética; $W_{tot} = \Delta K = K_2 - K_1$. Si la gravedad es la única fuerza que actúa, entonces, $W_{tot} = W_{grav} = -\Delta U_{grav} = U_{grav,1} - U_{grav,2}$. Juntando esto,
+
+    \[ K_2 - K_1 = U_{grav,1} - U_{grav,2} \]
+
+    \noindent que podemos reescribir como
+
+    \definicion{
+        \centering
+        $ K_1 + U_{grav,1} = K_2 + U_{grav,2} $
+    }
+
+    \par Ahora deﬁnimos la suma $K + U{grav}$ de las energías cinética y potencial como $E$, la \bl{energía mecánica total del sistema}. Así, $E_1 = K_1 + U_{grav,1}$ es la energía mecánica total en $y_1$ y $E_2 = K_2 + Ugrav,2$ es la energía mecánica total en $y_2$. Entonces podemos decir que $E_1 = E_2$. No obstante, dado que las posiciones $y_1$ y $y_2$ son puntos arbitrarios en el movimiento del cuerpo, la energía mecánica total $E$ tiene el mismo valor en todos los puntos durante el movimiento;
+
+    \[ E = K + U_{grav} = \text{constante} \]
+
+    \par Es decir, \textit{Si sólo la fuerza de gravedad efectúa trabajo, la energía mecánica total es constante, es decir, se conserva}. Éste es nuestro primer ejemplo de la \bl{conservación de la energía mecánica}.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.7]{img/6.1-2.png}
+    \end{figure}
+
+    \newex{Ejercicio 16. Altura de una pelota por conservación de la energía}
+
+    \par Usted lanza una pelota de béisbol con masa de 0.145 kg hacia arriba, dándole una velocidad inicial hacia arriba de $20.0 m/s$. Determine qué altura alcanza, despreciando la resistencia del aire.
+
+    \newex{Solución 16.}
+
+    \par ...
+
+    \newtitle{Energía potencial gravitacional para movimiento en una trayectoria curva}
+
+    \par Sobre el cuerpo actúa la fuerza gravitacional $\vec{w} = m\vec{g} $ y tal vez otras fuerzas cuya resultante llamamos $\vec{F}_{otras}$. Para calcular el trabajo efectuado por la fuerza gravitacional durante este desplazamiento, dividimos la trayectoria en segmentos pequeños $\Delta \vec{s}$; un segmento típico. El trabajo realizado por la fuerza gravitacional sobre este segmento es el producto escalar de la fuerza y el desplazamiento. En términos de vectores unitarios, la fuerza es $\vec{w} = m\vec{g} = -mg \hat{j}$  y el desplazamento es $\Delta \vec{s} = \Delta x \hat{i} + \Delta y \hat{j}$, así que el trabajo efectuado por la fuerza gravitacional es
+
+    \[ \vec{w} \cdot \Delta \vec{s} = -mg \hat{j} \cdot (\Delta x \hat{i} + \Delta y \hat{j}) = -mg \Delta y \]
+
+    El trabajo efectuado por la gravedad es el mismo que si el cuerpo se hubiera desplazado verticalmente una distancia $\Delta y$, sin desplazamiento horizontal. Esto se cumple para cada segmento, así que el trabajo total efectuado por la fuerza gravitacional es $-mg$ multiplicado por el desplazamiento vertical total ($y_2 - y_1$):
+
+    \[ W_{grav} = -mg(y_2 - y_1) = mg y_1 - mg y_2 = U_{grav,1} - U_{grav,2} \]
+
+    \par Esto es igual a la ecuación (7.1) o (7.3), donde se supuso una trayectoria completamente vertical. Así que, aun si la trayectoria de un cuerpo entre dos puntos es curva, el trabajo total efectuado por la gravedad depende sólo de la diferencia de altura entre esos dos puntos. Por lo tanto, \textit{podemos usar la misma expresión para la energía potencial gravitacional, sea la trayectoria del cuerpo recta o curva}.
+
+    \newex{Ejercicio 17. Cálculo de rapidez en un círculo vertical}
+
+    \par Imagine que su primo Morton baja en patineta por una rampa curva en un parque. Tratando a Morton y a su patineta como una partícula, ésta describe un cuarto de círculo de radio $R = 3.00 m$. La masa total de Morton y su patineta es de $25.0 kg$. Él parte del reposo y no hay fricción. 
+
+    \begin{list}{}{}
+        \item a) Calcule su rapidez en la base de la rampa.
+        \item b) Obtenga la fuerza normal que actúa sobre él en la base de la rampa.
+    \end{list}
+
+    \newex{Solución 17.}
+
+    \par ...
+
+    \newsubsection{Energía potencial elástica}
 
 \end{document}
