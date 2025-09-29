@@ -314,6 +314,17 @@
     \[ \lvert \vec{A}_x \rvert = \lvert \vec{A} \rvert \cos \theta \]
     \[ \lvert \vec{A}_y \rvert = \lvert \vec{A} \rvert \sin \theta \]
 
+    \newsubsection{Vectores unitarios}
+
+    \par Un \bl{vector unitario} es un vector con magnitud 1, sin unidades. Su única ﬁnalidad consiste en direccionar, es decir, describir una dirección en el espacio. En un sistema de coordenadas $x$-$y$ podemos deﬁnir un vector unitario $\hat{i}$ que apunte en la dirección del eje $+x$ y un vector unitario e $\hat{j}$ que apunte en la dirección del eje $+y$. Así, expresamos la relación entre vectores componentes y componentes, como sigue:
+
+    \[ \vec{A}_x = A_x \hat{i} \]
+    \[ \vec{A}_y = A_y \hat{j} \]
+
+    Asimismo, escribimos un vector A en términos de sus vectores componentes como
+
+    \[ \vec{A} = A_x \hat{i} + A_y \hat{j} \]
+
 \newsection{Movimiento en dos o en tres dimensiones}
 
 % ------------------- SECCIÓN 2 -------------------
@@ -1572,5 +1583,100 @@ que podemos sustituir $dv_x$ por ($dv_x/dx$) $dx$ en la ecuación. Esto cambia l
     \par ...
 
     \newsubsection{Energía potencial elástica}
+
+    \par Describiremos el proceso de almacenar energía en un cuerpo deformable, como un resorte o una banda de hule, en términos de \textit{energía potencial elástica}. Un cuerpo es \textit{elástico} si recupera su forma y tamaño originales después de deformarse.
+
+    \par Procedemos igual que con la energía potencial gravitacional. Comenzamos con el trabajo realizado por la fuerza elástica (del resorte) y lo combinamos con el teorema trabajo-energía. La diferencia es que la energía potencial gravitacional es una propiedad compartida de un cuerpo y la Tierra; no obstante, la energía potencial elástica sólo se almacena en el resorte (u otro cuerpo deformable).
+
+    \ladoALado{
+
+        \par En la ﬁgura, el cuerpo está en $x = 0$ con el resorte ni estirado ni comprimido. Movemos el bloque estirando o comprimiendo el resorte, y luego lo soltamos. Al moverse el bloque de una posición $x_1$ a otra posición $x_2$, ¿cuánto trabajo realiza la fuerza elástica (del resorte) sobre el bloque?
+        \vspace{0.2cm}
+        \par En la sección 5.3 vimos que el trabajo que debemos efectuar sobre el resorte para mover un extremo desde un alargamiento $x_1$ hasta otro alargamiento distinto $x_2$ es
+        \[ W = \frac{1}{2} k x_2^2 - \frac{1}{2} k x_1^2 \quad \quad \text{(trabajo efectuado sobre un resorte)}\]
+        \vspace{0.2cm}
+        \par Ahora nos interesa el trabajo efectuado por el resorte. Por la tercera ley de Newton, un trabajo es el negativo del otro. Cambiando los signos en la ecuación, vemos que, al desplazarse de $x_1$ a $x_2$, el resorte efectúa un trabajo $W_{el}$ dado por
+        \[ W_{el} = \frac{1}{2} k x_1^2 - \frac{1}{2} k x_2^2 \quad \quad \text{(trabajo efectuado por el resorte)} \]
+
+    }{img/6.2-1.png}{0.6}{0.4}
+
+    \par Como hicimos con el trabajo gravitacional, podemos expresar el trabajo del resorte en términos de una cantidad dada al principio y al ﬁnal del desplazamiento. Esta cantidad es $\frac{1}{2} k x^2$, que deﬁnimos como la \bl{energía potencial elástica}:
+
+    \definicion{
+        \centering
+        \( U_{el} = \frac{1}{2} k x^2 \quad \quad \text{(energía potencial elástica)} \)
+    }
+
+    \par Podemos usar la ecuación para expresar el trabajo Wel efectuado sobre el bloque por la fuerza elástica en términos del cambio en la energía potencial elástica:
+
+    \definicion{
+        \centering
+        \( W_{el} = \frac{1}{2} k x_1^2 - \frac{1}{2} k x_2^2 = U_{el,1} - U_{el,2} = - \Delta U_{el} \)
+    }
+
+    \par ...
+
+    \newex{Ejercicio 18. Movimiento con fuerzas gravitacional, elástica y de fricción}
+
+    \par ...
+
+    \newsubsection{
+        Fuerzas conservativas y no conservativas
+    }
+
+    \par Al estudiar la energía potencial se observa que es posible “almacenar” energía cinética convirtiéndola en potencial, con la idea de que luego puede recuperarse en forma de energía cinética. Un ejemplo sencillo es el de una pelota lanzada hacia arriba: en la subida su energía cinética se transforma en potencial, y al descender ocurre el proceso inverso, recuperando la energía cinética. Si no existiera la resistencia del aire, la pelota regresaría al punto de lanzamiento con la misma rapidez con la que fue arrojada.
+
+    \par En el ejemplo se cumple que existe una conversión bidireccional entre energía cinética y energía potencial. Esto permite definir una función de energía potencial de manera que la energía mecánica total, es decir, la suma de la energía cinética y la potencial, es constante o \textit{\bl{se conserva}} durante el movimiento.
+
+    \newtitle{Fuerzas conservativas}
+
+    \par Decimos que una fuerza que ofrece esta oportunidad de conversión bidireccional entre energías cinética y potencial es una \bl{fuerza conservativa}. Hemos visto dos ejemplos de fuerzas conservativas: la gravitacional y la de resorte. Una característica fundamental de las fuerzas conservativas es que su trabajo siempre es \textit{reversible}. Algo que depositamos en el “banco” de energía puede retirarse después sin pérdida.
+
+    \vspace{0.5cm}
+
+    \par El trabajo realizado por una fuerza conservativa siempre tiene estas propiedades:
+
+    \begin{enumerate}
+        \item Puede expresarse como la diferencia entre los valores inicial y ﬁnal de una función de \textit{energía potencial}.
+        \item Es reversible.
+        \item Es independiente de la trayectoria del cuerpo y depende sólo de los puntos inicial y ﬁnal.
+        \item Si los puntos inicial y ﬁnal son el mismo, el trabajo total es cero.
+    \end{enumerate}
+
+    \par Si las únicas fuerzas que efectúan trabajo son conservativas, la energía mecánica total $E = K + U$ es constante.
+
+    \newtitle{Fuerzas no conservativas}
+
+    \par El trabajo realizado por una \bl{fuerza no conservativa} no puede representarse con una función de energía potencial. Algunas fuerzas no conservativas, como la fricción cinética o la resistencia de ﬂuidos, hacen que se pierda o se disipe energía mecánica: son \bl{fuerzas disipadoras}. 
+    
+    \par También hay fuerzas no conservativas que \textit{aumentan} la energía mecánica. Los fragmentos de un petardo que estalla salen despedidos con una energía cinética muy grande, debido a una reacción química de la pólvora con el oxígeno. Las fuerzas liberadas por esta reacción no son conservativas porque el proceso no es reversible.
+
+    \newex{Ejercicio 19. El trabajo de fricción depende de la trayectoria}
+
+    \par ...
+
+    \newtitle{La ley de conservación de la energía}
+
+    \par Las fuerzas no conservativas no pueden representarse en términos de energía potencial; no obstante, podemos describir sus efectos en términos de energías distintas de la cinética y la potencial. Cuando un automóvil con frenos bloqueados se derrapa hasta detenerse, se calientan los neumáticos y el camino. La energía asociada a este cambio en el estado de los materiales se denomina \bl{energía interna}. Cuando se eleva la temperatura de un cuerpo, aumenta su energía interna; si se reduce su temperatura, disminuye su energía interna.
+
+    \par Para captar el signiﬁcado de la energía interna, consideremos un bloque que se desliza por una superﬁcie áspera. Cuando se desliza, la fricción realiza trabajo negativo sobre el bloque, y el cambio de energía interna del bloque y la superﬁcie es positivo (ambos se calientan). Experimentos cuidadosos demuestran que el aumento en la energía interna es exactamente igual al valor absoluto del trabajo efectuado por la fricción. Dicho de otro modo,
+
+    \[ \Delta U_{int} = - W_{otras} \]
+
+    \noindent donde $\Delta U_{int}$ es el cambio de energía interna. Si sustituimos esto en la ecuación $ K_1 + U_1 + W_{otras} = K_2 + U_2 $, vemos que
+
+    \[ K_1 + U_1 - \Delta U_{int} = K_2 + U_2 \]
+
+    \noindent Si escribimos $ \Delta K = K_2 - K_1 $ y $ \Delta U = U_2 - U_1 $, podemos expresar ﬁnalmente esto como
+
+    \definicion{
+        \centering
+        \( \Delta K + \Delta U + \Delta U_{int} = 0 \quad \quad \text{(ley de conservación de la energía)} \)
+    }
+
+    \par Este notable enunciado es la forma general de la \bl{ley de conservación de la energía}. En un proceso dado, las energías cinética, potencial e interna de un sistema pueden cambiar; pero la suma de todos los cambios siempre es cero. 
+    \par Una disminución en una forma de energía se compensa con un aumento en las otras. Si ampliamos nuestra deﬁnición de energía para incluir la energía interna, la ecuación dice que \textit{\bl{la energía nunca se crea ni se destruye, sólo cambia de forma}}. No se ha observado aún una excepción a esta regla.
+
+    \newex{Ejercicio 20. Trabajo efectuado por la fricción}
 
 \end{document}
