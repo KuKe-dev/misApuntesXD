@@ -1,11 +1,12 @@
 \documentclass{article}
 
+
+
 % --------------- PAQUETES ---------------
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{amsmath, amssymb}
 \usepackage{physics}
-\usepackage{siunitx}
 \usepackage{xcolor}
 \usepackage{tcolorbox}
 \usepackage{cancel}
@@ -202,10 +203,11 @@
 
     \begin{figure}[H]
         \centering
-        \shorthandoff{>}
+		\shorthandoff{>}
         \begin{tikzpicture}[scale=2]
             \draw[->] (0,0) -- (2,1) node[midway, above] {$\vec{A}$};
         \end{tikzpicture}
+        \shorthandoff{>}
     \end{figure}
 
     \definicion{
@@ -227,12 +229,13 @@
 
             \begin{figure}[H]
                 \centering
-                \shorthandoff{>}
+				\shorthandoff{>}
                 \begin{tikzpicture}[scale=1.2]
                     \draw[->, blue] (0,0) -- (1,1) node[midway, above] {$\vec{A}$};
                     \draw[->, red] (1,0) -- (2,1) node[midway, above] {$\vec{B}$};
                 \end{tikzpicture}
-                \shorthandon{>}
+                \shorthandoff{>}
+
             \end{figure}
 
         \end{minipage}
@@ -253,12 +256,13 @@
 
             \begin{figure}[H]
                 \centering
-                \shorthandoff{>}
+				\shorthandoff{>}
                 \begin{tikzpicture}[scale=1.2]
                     \draw[->, blue] (0,0) -- (1,1) node[midway, above] {$\vec{A}$};
                     \draw[->, red] (2,1) -- (1,0) node[midway, below, right] {$\vec{B}=-\vec{A}$};
                 \end{tikzpicture}
-                \shorthandon{>}
+                \shorthandoff{>}
+
             \end{figure}
 
         \end{minipage}
@@ -268,13 +272,14 @@
     \par \underline{Suma de vectores}: Para sumar vectores gráficamente, se usa el metodo "\bl{cola con punta}": se coloca el origen del segundo vector en el extremo del primero.
     \begin{figure}[H]
         \centering
-        \shorthandoff{>}
+		\shorthandoff{>}
         \begin{tikzpicture}[scale=1]
             \draw[->, gray] (0,0) -- (3,1) node[midway, below] {$\vec{A}$};
             \draw[->, gray] (3,1) -- (2,3) node[midway,right] {$\vec{B}$};
             \draw[->, blue] (0,0) -- (2,3) node[midway, above, left] {$\vec{A}+\vec{B}$};
         \end{tikzpicture}
-        \shorthandon{>}
+        \shorthandoff{>}
+
     \end{figure}
 
     \par No importa el orden en que sumes los vectores, siempre da el mismo resultado.
@@ -292,7 +297,7 @@
 
     \begin{figure}[H]
         \centering
-        \shorthandoff{>}
+		\shorthandoff{>}
         \begin{tikzpicture}[scale=1.2]
             \draw[->, black] (0,0) -- (3,0) node[below] {$x$};
             \draw[->, black] (0,0) -- (0,3) node[left] {$y$};
@@ -307,7 +312,7 @@
             \draw[->, black] (0.5,0) .. controls (0.5,0.4) and (0.3,0.5) ..  (0.25,0.5) node[midway, above, right] {$\theta$};
 
         \end{tikzpicture}
-        \shorthandon{>}
+		\shorthandoff{>}
     \end{figure}
 
     \par Podemos calcular la magnitud de las componentes de $\vec{A}$ si conocemos la magnitud A y su dirección. Describimos la direccion de un vector como el angulo $\theta$ formado por le eje x positivo con el vector en sentido anti horario. Entonces por definición de trigonométricas:
@@ -1678,5 +1683,297 @@ que podemos sustituir $dv_x$ por ($dv_x/dx$) $dx$ en la ecuación. Esto cambia l
     \par Una disminución en una forma de energía se compensa con un aumento en las otras. Si ampliamos nuestra deﬁnición de energía para incluir la energía interna, la ecuación dice que \textit{\bl{la energía nunca se crea ni se destruye, sólo cambia de forma}}. No se ha observado aún una excepción a esta regla.
 
     \newex{Ejercicio 20. Trabajo efectuado por la fricción}
+
+    \par ...
+
+    \newsubsection{Fuerza y energía potencial}
+
+    \par En los dos tipos de fuerzas conservativas (gravitacional y elástica) que estudiamos, comenzamos con una descripción del comportamiento de la fuerza y de él dedujimos una expresión para la \textit{energía potencial}.
+    \par No obstante, en su estudio de la física el lector encontrará situaciones donde tiene una expresión para la \textit{energía potencial} en función de la posición y necesita determinar la \textit{fuerza} correspondiente. Veremos varios ejemplos de este tipo cuando estudiemos las fuerzas eléctricas más adelante. En general, es mucho más fácil calcular primero la energía potencial eléctrica, y luego determinar la fuerza eléctrica correspondiente.
+
+    \vspace{0.5cm}
+
+    \par Veamos cómo calcular la fuerza que corresponde a una expresión de energía potencial dada. Primero, consideremos un movimiento rectilíneo sobre el eje $x$. Denotamos la componente x de la fuerza, que es función de $x$, con $F_x(x)$; y la energía potencial, con $U(x)$. Esta notación nos recuerda que tanto $F_x$ como $U$ son funciones de $x$. Ahora recordamos que, en cualquier desplazamiento, el trabajo $W$ efectuado por una fuerza conservativa es el negativo del cambio de energía potencial $\Delta U$:
+
+    \[ W = - \Delta U \]
+
+    \par Apliquemos esto a un desplazamiento pequeño $\Delta x$. El trabajo efectuado por $F_x(x)$ durante este desplazamiento es aproximadamente igual a $F_x(x) \Delta x$. Decimos “aproximadamente” porque $F_x(x)$ podría variar un poco en el intervalo Dx; pero se cumple, al menos aproximadamente, que
+
+    \[ F_x(x) \Delta x = - \Delta U \quad\quad \text{y} \quad\quad F_x(x) = - \frac{\Delta U}{\Delta x} \]
+
+    \par En el límite $\Delta x \rightarrow 0$, la variación de $F_ x$ se hace despreciable y tenemos la relación exacta
+
+    \definicion{
+        \centering
+        \( F_x(x) = - \frac{d U(x)}{dx} \quad o \quad F_x(x) = - U'(x) \quad \quad \text{(fuerza a partir de la energía potencial)} \)
+    }
+
+    \par El signiﬁcado físico de la ecuación es que \textit{una fuerza conservativa siempre trata de llevar el sistema a una energía potencial menor}.
+
+    \par Como verificación, consideremos la función de la energía potencial elástica, $U(x) = \frac{1}{2} kx^2$. Si sustituimos por esto:
+
+    \[ F_x(x) = - \frac{d}{dx} \left( \frac{1}{2} kx^2 \right)  = - kx \]
+
+    \newex{Ejercicio 21. Fuerza eléctrica y su energía potencial}
+
+    \par ...
+
+    \newtitle{Fuerza y energía potencial en tres dimensiones}
+
+    \par Podemos extender este análisis a tres dimensiones, donde la partícula puede moverse en las direcciones $x$, $y$, $z$, o todas a la vez. Donde bajo el mismo procedimiento llegamos a:
+
+    \[ F_x(x) = - \frac{\Delta U}{\Delta x} \quad F_y(y) = - \frac{\Delta U}{\Delta y} \quad F_z(z) = - \frac{\Delta U}{\Delta z} \]
+
+    \par Si queremos que las relaciones sean exactas, deberemos tomar límites $\Delta x \rightarrow 0$, $\Delta y \rightarrow 0$ y $\Delta z \rightarrow 0$ para que estos cocientes se conviertan en derivadas.  Calculamos la derivada de $U$ con respecto a $x$ suponiendo que $y$ y $z$ son constantes y sólo $x$ varía, y así sucesivamente. Éstas se llaman derivadas parciales y su notación usual es $\frac{\partial U}{\partial x}$ y así sucesivamente; el símbolo $\partial$ es una d modiﬁcada, por lo que escribimos
+
+    \definicion{
+        \centering
+        \( F_x = - \frac{\partial U}{\partial x} \quad F_y = - \frac{\partial U}{\partial y} \quad F_z = - \frac{\partial U}{\partial z} \)
+    }
+
+    \par Podemos usar vectores unitarios para escribir una sola expresión vectorial compacta para la fuerza $\vec{F}$:
+
+    \definicion{
+        \centering
+        \( \vec{F} = - \left( \frac{\partial U}{\partial x} \hat{i} + \frac{\partial U}{\partial y} \hat{j} + \frac{\partial U}{\partial z} \hat{k} \right) \quad \quad \text{(fuerza a partir de la energía potencial)} \)
+    }
+
+    \par La expresión en paréntesis representa una operación especíﬁca sobre la función U, donde se obtiene la derivada parcial de U con respecto a cada coordenada, se multiplican por el vector unitario correspondiente y se suman vectorialmente. Esta operación se denomina gradiente de U y  suele abreviarse $\vec{\nabla} U$. Por lo tanto, la fuerza es el negativo del gradiente de la función de energía potencial:
+
+    \[ \vec{F} = - \vec{\nabla} U\]
+
+    \newex{ Ejercicio 22. Fuerza y energía potencial en dos dimensiones}
+
+    \par ...
+
+    \newsubsection{Diagramas de energía}
+
+    \par ...
+
+    \newsection{Momento lineal, impulso y choques}
+
+    \par Hay muchas preguntas relacionadas con fuerzas que no pueden contestarse aplicando directamente la segunda ley de Newton, $\Sigma \vec{F} = m \vec{a}$. Por ejemplo, si un camión de 18 ruedas choca de frente con un auto compacto, ¿qué determina hacia dónde se mueven los restos después del choque? Cuando usted juega billar, ¿cómo decide la dirección que debe dar a la bola blanca para meter la bola 8 en una buchaca?
+
+    \par Algo que tienen en común todas estas preguntas es que implican fuerzas acerca de las que sabemos muy poco: las fuerzas que actúan entre el auto y el camión o entre las dos bolas de billar. Lo curioso es que en este capítulo veremos que ¡no necesitamos saber \textit{nada} acerca de esas fuerzas para contestar preguntas de este tipo!
+
+    \vspace{0.3cm}
+
+    \par Nuestro enfoque utiliza dos conceptos nuevos, \textit{\bl{momento lineal}} e \textit{\bl{impulso}}, y una nueva ley de conservación, la de \textit{\bl{conservación del momento lineal}}, tan importante como la de conservación de la energía. 
+    
+    \par En el ámbito de la mecánica newtoniana, la conservación del momento lineal nos permite analizar muchas situaciones que serían muy difíciles si tratáramos de aplicar las leyes de Newton directamente. Entre ellas están los choques, en los que dos cuerpos ejercen, uno sobre el otro, fuerzas muy grandes durante un lapso muy breve.
+
+    \newsubsection{Momento lineal e impulso}
+
+    \par En el capítulo 6 reexpresamos la segunda ley de Newton para una partícula, $\Sigma \vec{F} = m \vec{a}$, en términos del teorema del trabajo y la energía, el cual nos ayudó a resolver muchos problemas y nos llevó a la ley de conservación de la energía. Volvamos a $\Sigma \vec{F} = m \vec{a}$ y veamos otra forma útil de replantear esta ley fundamental.
+
+    \newtitle{Segunda ley de Newton en términos del momento lineal}
+
+    \par Consideremos una partícula de masa constante m. Puesto que $\vec{a} = \frac{d \vec{v}}{dt}$, podemos escribir la segunda ley de Newton para esta partícula así:
+
+    \[ \Sigma \vec{F} = m \frac{d \vec{v}}{dt} = \frac{d}{dt} \left( m \vec{v} \right) \]
+
+    \par Así, la segunda ley de Newton dice que la fuerza neta $\Sigma F$ que actúa sobre una partícula es igual a la rapidez de cambio de la combinación $m \vec{v}$, el producto de la masa y la velocidad de la partícula. Llamamos a esta combinación \bl{momento lineal} de la partícula
+
+    \definicion{
+        \centering
+        \( \vec{p} = m \vec{v} \quad \quad \text{(deﬁnición de momento lineal)} \)
+    }
+
+    \par Si sustituimos  la deﬁnición de momento lineal, en la segunda ley de Newton, tenemos:
+
+    \definicion{
+        \centering
+        \( \Sigma \vec{F} = \frac{d \vec{p}}{dt} \quad \quad \text{(segunda ley de Newton en términos de momento lineal)} \)
+    }
+
+    \par Ésta, y no $\Sigma \vec{F} = m \vec{a}$, es la forma en que Newton planteó originalmente su segunda ley (aunque él llamó momentum al momento lineal), y sólo es válida en marcos de referencia inerciales.
+
+    \newtitle{Teorema del impulso y el momento lineal}
+
+    \par El momento lineal de una partícula $\vec{p} = m \vec{v}$ y su energía cinética $K = \frac{1}{2}mv^2$ dependen de la masa y la velocidad de la partícula. ¿Qué diferencia fundamental hay entre estas cantidades? Para ver la diferencia física entre momento lineal y energía cinética, necesitamos deﬁnir una cantidad íntimamente relacionada con el momento lineal: el \textit{impulso}.
+
+    \par Consideremos primero una partícula sobre la que actúa una fuerza neta constante $\Sigma F$ durante un tiempo $\Delta t$, de $t_1$ a $t_2$. El \bl{impulso} de la fuerza neta, denotado con $\vec{J}$, se deﬁne como el producto de la fuerza neta y el intervalo de tiempo:
+
+    \definicion{
+        \centering
+        \( \vec{J} = \Sigma F (t_2 - t_1) = \Sigma F \Delta t \)
+    }
+
+    \par Para ver para qué nos sirve el impulso, volvamos a la segunda ley de Newton planteada en términos de momento lineal. Si la fuerza neta $\Sigma F$ es constante, $\frac{d \vec{p}}{dt}$ también es constante. En tal caso, $\frac{d \vec{p}}{dt}$ es igual al cambio total de momento lineal $\vec{p}_2 - \vec{p}_1$ durante el lapso $t_2 - t_1$, dividido entre el lapso:
+
+    \[ \Sigma \vec{F} = \frac{\vec{p}_2 - \vec{p}_1}{t_2 - t_1} \]
+
+    \par Si multiplicamos esta ecuación por ($t_2 - t_1$), tenemos
+
+    \[ \Sigma \vec{F} (t_2 - t_1) = \vec{p}_2 - \vec{p}_1 \]
+
+    \par Obteniendo un resultado conocido como \bl{teorema del impulso y el momento lineal}:
+
+    \definicion{
+        \centering
+        \( \vec{J} = \vec{p}_2 - \vec{p}_1 \quad \quad \text{(teorema del impulso y el momento lineal)} \)
+    }
+
+    \definicion{
+        \bl{El cambio del momento lineal de una partícula durante un intervalo de tiempo es igual al impulso de la fuerza neta que actúa sobre la partícula durante ese intervalo.}
+    }
+
+    \par El teorema del impulso y el momento lineal también se cumple si las fuerzas no son constantes. Para comprobarlo, integramos los dos miembros de la segunda ley de Newton $\Sigma \vec{F} = \frac{d \vec{p}}{dt}$ con respecto al tiempo entre los límites $t_1$ y $t_2$:
+
+    \[ \int_{t_1}^{t_2} \Sigma \vec{F} dt = \int_{t_1}^{t_2} \frac{d \vec{p}}{dt} dt = \int_{\vec{P}_1}^{\vec{P}_2} d \vec{p} = \vec{p}_2 - \vec{p}_1 \]
+
+    \par La integral de la izquierda es, por deﬁnición, el impulso $\vec{J}$ de la fuerza neta $\Sigma \vec{F}$ durante este intervalo:
+
+    \definicion{
+        \centering
+        \( \vec{J} = \int_{t_1}^{t_2} \Sigma \vec{F} dt \quad \quad \text{(deﬁnición general de impulso)} \)
+    }
+
+    \newtitle{Comparación de momento lineal y energía cinética}
+
+    \par El teorema del impulso y el momento lineal $\vec{J} = \vec{p}_2 - \vec{p}_1$ dice que los cambios en el momento lineal de una partícula se deben al impulso, que depende del tiempo durante el que actúa la fuerza neta. En cambio, el teorema del trabajo y la energía $W_{tot} = K_2 - K_1$ nos dice que la energía cinética cambia cuando se realiza trabajo sobre una partícula; el trabajo total depende de la distancia en la que actúa la fuerza neta. 
+
+    \par Considere una partícula que parte del reposo en $t_1$, de manera que $\vec{v}_1 = 0$. Su momento lineal inicial es $\vec{p}_1 = m \vec{v}_1 = 0$, y su energía cinética inicial es $K_1 = \frac{1}{2} m v_1^2 = 0$. Ahora, una fuerza neta constante igual a $\vec{F}$ actúa sobre el cuerpo del tiempo $t_1$ al tiempo $t_2$. En este intervalo, la partícula se mueve una distancia $s$ en la dirección de la fuerza. Por lo que el momento lineal del cuerpo en el instante $t_2$ es
+
+    \[ \vec{p}_2 = \vec{p}_1 + \vec{J} = \vec{J} \]
+
+    \noindent donde $\vec{J} = \vec{F} (t_2 - t_1)$ es el impulso que actúa sobre la partícula. Así, el momento lineal de una partícula es igual al impulso que la aceleró desde el reposo hasta su rapidez actual; el impulso es el producto de la fuerza neta que aceleró el cuerpo y el tiempo requerido para la aceleración. En cambio, la energía cinética del cuerpo en $t_2$ es $K_2 = W_{tot} = F s$, el trabajo total efectuado sobre el cuerpo para acelerarlo desde el reposo. El trabajo total es igual al producto de la fuerza neta y la distancia necesaria para acelerar la partícula.
+
+    \newex{Ejercicio 23. Momento lineal contra energía cinética}
+
+    \par Suponga que lanza una pelota de $0.40 kg$ contra una pared, a la cual golpea moviéndose horizontalmente hacia la izquierda a $30 m/s$ y rebotando horizontalmente a la derecha con rapidez de $20 m/s$.
+
+    \begin{list}{}{}
+        \item a) Calcule el impulso de la fuerza neta sobre la pelota durante el choque.
+        \item b) Si la pelota está en contacto con la pared durante $0.010 s$, calcule la fuerza horizontal media que la pared ejerce sobre la pelota durante el impacto.
+    \end{list}
+
+    \newex{Solución 23.}
+
+    \par ...
+
+    \newsubsection{Conservación del momento lineal}
+
+    \par El concepto de momento lineal tiene especial importancia en situaciones en las que dos o más cuerpos \textit{interactúan}. Para ver por qué, consideremos primero un sistema idealizado de dos cuerpos que interactúan entre sí, por ejemplo, dos astronautas que se tocan mientras ﬂotan libremente en el espacio exterior en un ambiente de gravedad cero. Consideremos a los astronautas como partículas. Cada partícula ejerce una fuerza sobre la otra. Los \textit{impulsos} que actúan sobre las dos partículas son iguales y opuestos, y los cambios de momento lineal de las dos partículas serán iguales y opuestos.
+
+    \par Repasemos esto a la luz de ciertos términos nuevos. En cualquier sistema, las fuerzas que las partículas del sistema ejercen entre sí se denominan \bl{fuerzas internas}; las ejercidas sobre cualquier parte del sistema por algún objeto externo son \bl{fuerzas externas}. Las fuerzas internas son $\vec{F}_{B \rightarrow A}$, ejercida por la partícula $B$ sobre la $A$, y $\vec{F}_{A \rightarrow B}$ ejercida por la partícula $A$ sobre la $B$. No hay fuerzas externas, así que tenemos un \bl{sistema aislado}.
+    \par Las razones de cambio del momento lineal de ambas partículas son
+
+    \[ \vec{F}_{B \rightarrow A} = \frac{d \vec{p}_A}{dt} \quad\quad \vec{F}_{A \rightarrow B} = \frac{d \vec{p}_B}{dt} \]
+
+    \noindent  las dos fuerzas, $\vec{F}_{B \rightarrow A}$ y $\vec{F}_{A \rightarrow B}$ siempre son iguales en magnitud y opuestas en dirección. Es decir, $\vec{F}_{B \rightarrow A} = - \vec{F}_{A \rightarrow B} $, así que $\vec{F}_{B \rightarrow A} + \vec{F}_{A \rightarrow B} = 0$. Sumando las dos ecuaciones, tenemos
+
+    \[ \vec{F}_{B \rightarrow A} + \vec{F}_{A \rightarrow B} = \frac{d \vec{p}_A}{dt} + \frac{d \vec{p}_B}{dt} = \frac{d (\vec{p}_A + \vec{p}_B)}{dt} = 0 \]
+
+    \par Las razones de cambio de los dos momentos lineales son iguales y opuestas, así que la razón de cambio de la suma vectorial $\vec{p}_A + \vec{p}_B$ es cero. Ahora definimos el \bl{momento lineal total} $\vec{P}$ del sistema de dos partículas como la suma vectorial de los momentos lineales de las partículas individuales. Esto es,
+
+    \[ \vec{P} = \vec{p}_A + \vec{p}_B \]
+
+    \par Así, la ecuación se convierte ﬁnalmente en
+
+    \[ \vec{F}_{B \rightarrow A} + \vec{F}_{A \rightarrow B} = \frac{d \vec{P}}{dt} = 0 \]
+
+    \par La razón de cambio del momento lineal total $\vec{P}$ es cero. Por lo tanto, el momento lineal total del sistema es constante, aunque los momentos lineales individuales de las partículas que constituyen el sistema pueden cambiar.
+
+    \definicion{
+        \par \bl{Si la suma vectorial de las fuerzas externas sobre un sistema es cero, el momento lineal total del sistema es constante.}
+    }
+
+    \par Ésta es la forma más sencilla del \bl{principio de conservación del momento lineal}, el cual es una consecuencia directa de la tercera ley de Newton.
+    \par Podemos generalizar este principio para un sistema con cualquier número de partículas $A$, $B$, $C$, … que sólo interactúan entre sí. El momento lineal total del sistema es
+
+    \[ \vec{P} = \vec{p}_A + \vec{p}_B + \vec{p}_C + \cdots = m_A \vec{v}_A + m_B \vec{v}_B + m_C \vec{v}_C + \cdots \quad \text{(momento lineal total del sistema)} \]
+
+    \newex{Ejercicio 24. Retroceso de un riﬂe}
+
+    \par Un tirador sostiene holgadamente un riﬂe de masa $m_R = 3.00 kg$, de manera que pueda retroceder libremente al hacer un disparo. Dispara una bala de masa $m_B = 5 g = 0.005 kg$ con una velocidad horizontal relativa al suelo de $v_{Bx} = 300 m/s$. ¿Qué velocidad de retroceso $v_{Rx}$ tiene el riﬂe? ¿Qué momento lineal y energía cinética ﬁnales tiene la bala? ¿Y el riﬂe?
+
+    \newex{Solución 24.}
+
+    \par ...
+
+    \newsubsection{Conservación del momento lineal y choques}
+
+    \par El término choque hace que una persona común piense en un percance de tráﬁco. Usaremos el término en ese sentido, pero además ampliaremos su significado para incluir cualquier interacción vigorosa entre cuerpos con duración relativamente corta.
+
+    \par Si las fuerzas entre los cuerpos son mucho mayores que las externas, como suele suceder en los choques, podemos ignorar las fuerzas externas y tratar los cuerpos como un sistema \textit{aislado}. Entonces, el momento lineal se conserva y el momento lineal total del sistema tendrá el mismo valor antes y después del choque.
+
+    \newtitle{Choques elásticos e inelásticos}
+
+    \par Si las fuerzas entre los cuerpos son \textit{conservativas}, de manera que no se pierde ni gana energía mecánica en el choque, la \textit{energía} cinética total del sistema es la misma antes y después. Esto se denomina \bl{choque elástico}. Un choque entre dos canicas o dos bolas de billar es casi totalmente elástico.
+
+    \par Un choque en el que la energía cinética total ﬁnal es \textit{menor} que la inicial es un \bl{choque inelástico}. Una albóndiga que cae en un plato de espagueti y una bala que se incrusta en un bloque de madera son ejemplos de choques inelásticos. Un choque inelástico en el que los cuerpos se pegan y se mueven como uno solo después del choque es un \bl{choque totalmente inelástico}.
+
+    \vspace{1cm}
+
+    \par \bl{En todo choque en el que se pueden ignorar las fuerzas externas, el momento lineal se conserva y el momento lineal total es el mismo antes y después. La energía cinética total sólo es igual antes y después si el choque es elástico.}
+
+    \newtitle{Choque totalmente inelásticos}
+
+    \ladoALado{
+        \par Veamos qué sucede con el momento lineal y la energía cinética en un choque totalmente inelástico de dos cuerpos $A$ y $B$, como en la ﬁgura. Dado que los cuerpos quedan pegados después del choque, tienen la misma velocidad ﬁnal $\vec{v}_2$:
+
+        \[ \vec{v}_A2 = \vec{v}_B2 = \vec{v}_2 \]
+
+        \par La conservación del momento lineal da la relación
+
+        \[ m_A \vec{v}_{A1} + m_B \vec{v}_{B1} = (m_A + m_B) \vec{v}_2 \]
+
+        \par Si conocemos las masas y las velocidades iniciales, podremos calcular la velocidad ﬁnal común $\vec{v}_2$.
+
+    }{img/7.3-1.png}{0.5}{0.5}
+
+    \newex{Ejercicio 25. Choque totalmente inelástico}
+
+    \par Suponga que, en el choque descrito en el ejemplo 8.5 (sección 8.2), los deslizadores no rebotan, sino que quedan pegados después del choque. Las masas y velocidades iniciales son las mismas que en el ejemplo 8.5. Calcule la velocidad ﬁnal común v2x y compare las energías cinéticas inicial y ﬁnal del sistema.
+
+    \newex{Solución 25.}
+
+    \par ...
+
+    \newtitle{Clasiﬁcación de los choques}
+
+    \par Es importante recordar que los choques se clasiﬁcan de acuerdo con consideraciones de energía. Un choque en el que la energía cinética se \textit{conserva} se considera \textit{\bl{elástico}}. Un choque en el que la energía cinética total \textit{disminuye} se llama \textit{\bl{inelástico}}. Cuando dos cuerpos tienen una \textit{velocidad ﬁnal común}, decimos que el choque es \textit{\bl{totalmente inelástico}}. También hay casos en los que la energía cinética ﬁnal es mayor que el valor inicial, por ejemplo el retroceso de los riﬂes.
+
+    \newsubsection{Choques elásticos}
+
+    \par Como vimos en la sección 7.3, un choque elástico en un sistema aislado es uno en el que se conserva la energía cinética. Estos choques ocurren cuando las fuerzas entre los cuerpos que chocan son conservativas. Si chocan dos bolas de billar, se aplastan un poco cerca del punto de contacto, pero luego rebotan. Parte de la energía cinética se almacena temporalmente como energía potencial elástica, pero al ﬁnal se convierte una vez más en energía cinética.
+
+    \par Examinemos un choque elástico entre dos cuerpos A y B. Comencemos con un choque en una dimensión, con todas las velocidades en la misma línea, a la que llamamos eje $x$. Llamamos $v_{A1x}$ y $v_{B1x}$ a las componentes $x$ de velocidad antes del choque, y $v_{A2x}$ y $v_{B2x}$ a las componentes $x$ después del choque. Por la conservación de la energía cinética tenemos
+
+    \[ \frac{1}{2} m_A v_{A1x}^2 + \frac{1}{2} m_B v_{B1x}^2 = \frac{1}{2} m_A v_{A2x}^2 + \frac{1}{2} m_B v_{B2x}^2 \]
+
+    \par y la conservación del momento lineal da
+
+    \[ m_A v_{A1x} + m_B v_{B1x} = m_A v_{A2x} + m_B v_{B2x} \]
+
+    \par Si conocemos las masas $m_A$ y $m_B$ y las velocidades iniciales $v_{A1x}$ y $v_{B1x}$, podremos resolver las ecuaciones para obtener las velocidades ﬁnales $v_{A2x}$ y $v_{B2x}$.
+
+    \newtitle{Choques elásticos, un cuerpo inicialmente en reposo}
+
+    \par La solución general de las ecuaciones anteriores es algo complicada, así que nos concentraremos en el caso especial en que el cuerpo $B$ está en reposo antes del choque. Piense que el cuerpo B es el blanco que A debe golpear. Las ecuaciones de conservación de energía cinética y el momento lineal son, respectivamente,
+
+    \[ \frac{1}{2} m_A v_{A1x}^2 = \frac{1}{2} m_A v_{A2x}^2 + \frac{1}{2} m_B v_{B2x}^2 \]
+
+    \[ m_A v_{A1x} = m_A v_{A2x} + m_B v_{B2x} \]
+
+    \par Reacomodemos primero las ecuaciones así:
+
+    \[ m_B v_{B2x}^2 = m_A (v_{A1x} - v_{A2x})(v_{A1x} + v_{A2x}) \]
+    \[ m_B v_{B2x} = m_A (v_{A1x} - v_{A2x}) \]
+
+    \par Ahora dividimos la primera ecuación entre la segunda para obtener
+
+    \[ v_{B2x} = v_{A1x} + v_{A2x} \]
+
+    \par Sustituyendo en $m_B v_{B2x} = m_A (v_{A1x} - v_{A2x})$ obtenemos
+
+    \[ m_B (v_{A1x} + v_{A2x}) = m_A (v_{A1x} - v_{A2x}) \]
+
+    \[ v_{A2x} = \frac{m_A - m_B}{m_A + m_B} v_{A1x} \]
+
+    \par Por último, sustituimos este resultado en la ecuación ($v_{B2x} = v_{A1x} + v_{A2x}$) para obtener
+
+    \[ v_{B2x} = \frac{2 m_A}{m_A + m_B} v_{A1x} \]
 
 \end{document}
