@@ -33,7 +33,7 @@
 
 % --------------- COMANDOS PERSONALIZADOS ---------------
 \newcommand{\newsection}[1]{
-    \vspace{0.5cm}
+    \pagebreak
     {\color{sectionColor}
     \centering
     \section{\bl{#1}}}
@@ -44,14 +44,14 @@
 \newcommand{\newsubsection}[1]{
     \vspace{0.5cm}
     \color{sectionColor}
-    \subsection{ #1}
+    \subsection{\bl{#1}}
     \color{black}
     \vspace{0.5cm}
 }
 
 \newcommand{\newtitle}[1]{
     \color{titleColor}
-    \subsubsection{\textbf{#1}}
+    \subsubsection{#1}
     \color{black}
 }
 
@@ -900,7 +900,7 @@
 
     \par ...
 
-
+    \pagebreak
     \newsubsection{Fuerzas fundamentales de la naturaleza}
 
     \par Hemos visto fuerzas de varios tipos —peso, tensión, fricción, resistencia de fluidos y la fuerza normal— y veremos otras más al seguir estudiando física. Pero, ¿cuántas clases distintas de fuerzas hay? Actualmente, se considera que todas las fuerzas son expresiones de tan sólo cuatro clases de fuerzas o interacciones fundamentales entre las partículas.
@@ -1975,5 +1975,270 @@ que podemos sustituir $dv_x$ por ($dv_x/dx$) $dx$ en la ecuación. Esto cambia l
     \par Por último, sustituimos este resultado en la ecuación ($v_{B2x} = v_{A1x} + v_{A2x}$) para obtener
 
     \[ v_{B2x} = \frac{2 m_A}{m_A + m_B} v_{A1x} \]
+
+    \newsubsection{Centro de masa}
+
+    \par Podemos replantear el principio de conservación del momento lineal en una forma útil usando el concepto de \bl{centro de masa}. Supongamos que tenemos varias partículas con masas $m_1$, $m_2$, etcétera. Las coordenadas de $m_1$ son ($x_1$, $y_1$), las de $m_2$, ($x_2$, $y_2$), y así sucesivamente. Deﬁnimos el centro de masa del sistema como el punto con coordenadas ($x_{cm}$, $y_{cm}$) dadas por
+
+    \[ x_{cm} = \frac{m_1 x_1 + m_2 x_2 + m_3 x_3 + \cdots}{m_1 + m_2 + m_3 + \cdots} = \frac{\sum_{i}^{} m_i x_i}{\sum_{i}^{} m_i} \]
+
+    \[ y_{cm} = \frac{m_1 y_1 + m_2 y_2 + m_3 y_3 + \cdots}{m_1 + m_2 + m_3 + \cdots} = \frac{\sum_{i}^{} m_i y_i}{\sum_{i}^{} m_i} \]
+
+    \par El vector de posición $\vec{r}_{cm}$ del centro de masa se puede expresar en términos de los vectores de posición $\vec{r}_1$, $\vec{r}_2$, $\cdots$ de las partículas como
+
+    \definicion{
+        \centering
+        \( \vec{r}_{cm} = \frac{m_1 \vec{r}_1 + m_2 \vec{r}_2 + m_3 \vec{r}_3 + \cdots}{m_1 + m_2 + m_3 + \cdots} = \frac{\sum_{i}^{} m_i \vec{r}_i}{\sum_{i}^{} m_i} \quad \quad \text{(Centro de masa)} \)
+    }
+
+    \newtitle{Movimiento del centro de masa}
+
+    \par Para comprender la importancia del centro de masa de un conjunto de partículas, debemos preguntar qué le sucede cuando las partículas se mueven. Las componentes $x$ e $y$ de velocidad del centro de masa, $v_{cm-x}$ y $v_{cm-y}$ son las derivadas de $x_{cm}$ e $y_{cm}$ respecto al tiempo. Al derivar las ecuaciones del centro de masa respecto al tiempo, obtenemos
+
+    \[ v_{cm-x} = \frac{\sum_{i}^{} m_i v_{i-x}}{\sum_{i}^{} m_i} \quad \quad v_{cm-y} = \frac{\sum_{i}^{} m_i v_{i-y}}{\sum_{i}^{} m_i} \]
+
+    \par Estas ecuaciones son equivalentes a la ecuación de un solo vector que se obtiene al derivar respecto al tiempo:
+
+    \[ \vec{v}_{cm} = \frac{\sum_{i}^{} m_i \vec{v}_i}{\sum_{i}^{} m_i} \]
+
+    \par Denotamos la masa total $m_1 + m_2 + \cdots$ con $M$. Así, podemos reescribir la ecuación como
+
+    \definicion{
+        \centering
+        \( M \vec{v}_{cm} = m_1 \vec{v}_1 + m_2 \vec{v}_2 + m_3 \vec{v}_3 + \cdots = \vec{P} \)
+    }
+
+    \par El lado derecho es el momento lineal total $\vec{P}$ del sistema. Así, hemos demostrado que \textit{el momento lineal total es igual a la masa total multiplicada por la velocidad del centro de masa}.
+
+    \newex{Ejercicio 26. Tira y aﬂoja en el hielo}
+
+    \par Santiago y Ramón están de pie, con una separación de $20.0 m$, sobre la resbalosa superﬁcie de un estanque helado. Ramón tiene una masa de $60.0 kg$, y Santiago, de $90.0 kg$. A medio camino entre ellos está un tarro de su bebida favorita. Los dos tiran de los extremos de una cuerda ligera que hay entre ellos. Cuando Santiago se ha movido $6.0 m$ hacia el tarro, ¿cuánto y en qué dirección se ha movido Ramón?
+
+    \newex{Solución 26.}
+
+    \par ...
+
+    \newtitle{Fuerzas externas y movimiento del centro de masa}
+
+    \par Dando un paso más, derivamos las ecuaciones respecto al tiempo para demostrar que las aceleraciones están relacionadas de la misma forma. Sea $\vec{a}_{cm} = \frac{d\vec{v}_{cm}}{dt}$ la aceleración del centro de masa; entonces,
+
+    \[ M \vec{a}_{cm} = m_1 \vec{a}_1 + m_2 \vec{a}_2 + m_3 \vec{a}_3 + \cdots \]
+
+    \par Ahora, $m_1 \vec{a}_1$ es la suma vectorial de las fuerzas que actúan sobre la primera partícula, y así sucesivamente, por lo que el lado derecho de la ecuación es igual a la suma vectorial $\sum \vec{F}$ de \textit{todas} las fuerzas que actúan sobre todas las partículas. Igual que en secciones anteriores, podemos clasiﬁcar cada fuerza como interna o externa. La suma de todas las fuerzas que actúan sobre todas las partículas es entonces
+
+    \[ \sum \vec{F} = \sum \vec{F}_{int} + \sum \vec{F}_{ext} = M \vec{a}_{cm} \]
+    
+    \par Porla tercera ley de Newton, todas las fuerzas internas se cancelan en pares, y $\sum \vec{F}_{int} = 0$. Lo que queda en el lado izquierdo es la suma sólo de las fuerzas externas:
+
+    \definicion{
+        \centering
+        \( \sum \vec{F}_{ext} = M \vec{a}_{cm} \quad \quad \text{(cuerpo o conjunto de partículas)} \)
+    }
+
+    \definicion{
+        \bl{
+            Cuando fuerzas externas actúan sobre un cuerpo o un conjunto de partículas, el centro de masa se mueve como si toda la masa estuviera concentrada en ese punto y sobre ella actuara una fuerza neta igual a la suma de las fuerzas externas que actúan sobre el sistema.
+        }
+    }
+
+    \par Este resultado quizá no suene muy impresionante, pero es básico en mecánica. De hecho, hemos estado usándolo todo el tiempo; sin él, no podríamos representar un cuerpo extendido como una partícula puntual al aplicar las leyes de Newton. 
+
+    \pagebreak
+
+    \par Suponga que un obús con una trayectoria parabólica (ignorando la resistencia del aire) estalla en vuelo dividiéndose en dos fragmentos de igual masa (ﬁgura). Los fragmentos siguen nuevas trayectorias parabólicas, pero el centro de masa sigue la trayectoria parabólica original, igual que si la masa aún estuviera concentrada ahí. Un cohete que estalla es un ejemplo espectacular de este efecto.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.6]{img/7.5-1.png}
+    \end{figure}
+
+    \par Esta propiedad del centro de masa es importante al analizar el movimiento de cuerpos rígidos. Describimos el movimiento de un cuerpo extendido como una combinación de traslación del centro de masa y rotación alrededor de un eje que pasa por ese centro.
+
+    \newsubsection{*Propulsión a reacción}
+
+    \par ...
+
+    \newsection{Rotación de Cuerpos Rígidos}
+
+    \par ...
+
+    \newsection{Dinámica del Movimiento Rotacional}
+
+    \par ...
+
+    \newsection{Equilibrio y Elasticidad}
+
+    \par ...
+
+    \newsection{Gravitación}
+
+    \par Como enfatizamos en el capítulo 5, la gravitación es una de las cuatro clases de interacciones que observamos en la naturaleza, y fue la primera que se estudió ampliamente. En el siglo XVII, Newton descubrió que la misma interacción que hace a una manzana caer de un árbol mantiene a los planetas en órbita alrededor del Sol. Ése fue el nacimiento de la \textit{mecánica celeste}, es decir, el estudio de la dinámica de los objetos en el espacio.
+
+    \par En este capítulo estudiaremos la ley básica que rige las interacciones gravitacionales. Se trata de una ley \textit{universal}: la gravedad actúa fundamentalmente de la misma manera: entre la Tierra y nuestro cuerpo, entre el Sol y un planeta y entre un planeta y sus lunas. Aplicaremos la ley de la gravitación a fenómenos como la variación del peso con la elevación, las órbitas de los satélites terrestres y las de los planetas alrededor del Sol.
+
+    \newsubsection{Ley de Newton de la gravitación}
+
+    \par Al estudiar el movimiento de los planetas y la Luna, Newton descubrió el carácter fundamental de la atracción gravitacional entre dos cuerpos cualesquiera. Junto con sus tres leyes del movimiento, en 1687 Newton publicó la \bl{ley de la gravitación}, que puede enunciarse así:
+
+    \definicion{
+        \bl{
+            Toda partícula de materia en el Universo atrae a todas las demás partículas con una fuerza directamente proporcional al producto de las masas de las partículas, e inversamente proporcional al cuadrado de la distancia que las separa.
+        }
+    }
+
+    \par Traduciendo esto a una ecuación, tenemos
+
+    \definicion{
+        \centering
+        \( F_g = \frac{G m_1 m_2}{r^2} \quad \quad \text{(ley de la gravitación)} \)
+    }
+
+    \ladoALado{
+        \noindent donde $F_g$ es la magnitud de la fuerza gravitacional que actúa sobre cualesquiera de las partículas, $m_1$ y $m_2$ son sus masas, $r$ es la distancia entre ellas (ﬁgura) y G es una constante física fundamental llamada \bl{constante gravitacional}. El valor numérico de G depende del sistema de unidades empleado.
+    }{img/11.1-1.png}{0.5}{0.5}
+
+    \par La ecuación nos indica que la fuerza gravitacional entre dos partículas disminuye al aumentar la distancia $r$; por ejemplo, si se duplica la distancia, la fuerza se reducirá a la cuarta parte y así sucesivamente. Aunque muchas estrellas del ﬁrmamento tienen una masa mucho mayor que la del Sol, están tan lejos que la fuerza gravitacional que ejercen sobre la Tierra es insigniﬁcante.
+
+    \newtitle{Determinación del valor de G}
+
+    \par Para determinar el valor de la constante de gravitación $G$, debemos medir la fuerza gravitacional entre dos cuerpos de masas conocidas $m_1$ y $m_2$ a una distancia conocida $r$. La fuerza es muy pequeña para cuerpos que caben en un laboratorio, aunque puede medirse con un instrumento llamado balanza de torsión, que Sir Henry Cavendish usó en 1798 para determinar $G$.
+    
+    \par En la ﬁgura se muestra una versión moderna de la balanza de torsión. Una varilla ligera y rígida con forma de $T$ invertida es sostenida por una ﬁbra vertical de cuarzo muy delgada. Dos esferas pequeñas de masa $m_1$ se montan en los extremos de los brazos horizontales de la $T$. Si colocamos dos esferas grandes de masa $m_2$ en las posiciones indicadas, las fuerzas de atracción gravitacionales hacen girar la $T$ un ángulo pequeño. Para medir el ángulo, hacemos incidir un rayo de luz en un espejo sujeto a la $T$. El haz reﬂejado incide en una escala; al girar la $T$, la luz se mueve en la escala.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/11.1-2.png}
+    \end{figure}
+
+    \par Después de calibrar la balanza de Cavendish, podemos medir las fuerzas gravitacionales y así determinar $G$. El valor aceptado actualmente (en unidades del SI) es
+
+    \definicion{
+        \centering
+        \( G = 6.6742 \times 10^{-11} N \cdot m^2 / kg^{2} \)
+    }
+
+    \newsubsection{Peso}
+
+    \par En la sección 3.4 deﬁnimos el \textit{peso} de un cuerpo como la fuerza de atracción gravitacional que la Tierra ejerce sobre él. Ahora vamos a ampliar nuestra deﬁnición:
+
+    \definicion{
+        \bl{
+            El peso de un cuerpo es la fuerza gravitacional total ejercida sobre él por todos los demás cuerpos del Universo.
+        }
+    }
+
+    \par Si un cuerpo está cerca de la superﬁcie terrestre, podemos despreciar las demás fuerzas gravitacionales y considerar el peso tan sólo como la atracción de la Tierra. En la superﬁcie de la Luna, tomaremos el peso de un cuerpo como la atracción gravitacional de la Luna, etcétera.
+    \par Si de nuevo modelamos la Tierra como un cuerpo esféricamente simétrico con radio $R_E$ y masa $m_E$, el peso $w$ de un cuerpo pequeño de masa $m$ en la superﬁcie terrestre (a una distancia $R_E$ del centro) es
+
+    \definicion{
+        \centering
+        \( w = F_g = \frac{G m_E m}{{R_E}^2} \quad \quad \text{(peso en la superficie terrestre)} \)
+    }
+
+    \par Sin embargo, en la sección 3.4 también vimos que el peso $w$ de un cuerpo es la fuerza que causa la aceleración $g$ de caída libre, de modo que por la segunda ley de Newton, $w = mg$. Si igualamos esto con la ecuación y dividimos entre $m$, obtenemos
+
+    \definicion{
+        \centering
+        \( g = \frac{G m_E}{{R_E}^2} \quad \quad \text{(aceleración en la superficie terrestre)} \)
+    }
+
+    \newex{Ejercicio 27. Gravedad en Marte}
+
+    \par Una misión no tripulada se envía a la superﬁcie de Marte, cuyo radio es $R_M = 3.4 \times 10^6 m$ y cuya masa es $m_M = 6.42 \times 10^{23} kg$. El peso, en la Tierra, del vehículo de descenso es de $3920 N$. Calcule su peso $F_g$ y la aceleración $g_M$ debida a la gravedad de Marte: 
+
+    \begin{list}{}{}
+        \item a) $6 \times 10^6 m$ arriba de la superﬁcie (la distancia a la que está su luna Fobos)
+        \item b) en la superﬁcie marciana. No tome en cuenta los efectos gravitacionales de las diminutas lunas de Marte.
+    \end{list}
+
+    \newex{Solución 27.}
+
+    \par ...
+
+    \newsubsection{Energía potencial gravitacional}
+
+    \ladoALado{
+        \par Consideramos un cuerpo de masa $m$ fuera de la Tierra, y calculamos primero el trabajo Wgrav efectuado por la fuerza gravitacional cuando el cuerpo se aleja del centro de la Tierra o se acerca a él, desde $r = r_1$ hasta $r = r_2$ (ﬁgura). Así, $W_{grav}$ está dado por
+
+        \[ W_{grav} = - \int_{r_1}^{r_2} F_r dr \]
+    }{img/11.3-1.png}{0.5}{0.5}
+
+    \par donde $F_r$ es la componente radial de la fuerza gravitacional $\vec{F}$, es decir, la componente dirigida \textit{hacia afuera} desde el centro de la Tierra. Dado que $\vec{F}$ apunta \textit{hacia} el \textit{centro} de la Tierra, $F_r$ es negativa; diﬁere de la ecuación $ F_g = \frac{G m_E m}{r^2} $, la magnitud de la fuerza gravitacional, por un signo menos:
+
+    \[ F_r = - \frac{G m_E m}{r^2} \]
+
+    \par Sustituyendo vemos que $W_{grav}$ está dado por
+
+    \[ W_{grav} = - G m_E m \int_{r_1}^{r_2} \frac{dr}{r^2} = \frac{G m_E m}{r_2} - \frac{G m_E m}{r_1} \]
+
+    \par Ahora deﬁnimos la energía potencial correspondiente $U$ tal que $W_{grav} = U_1 - U_2$. Vemos que la deﬁnición apropiada de \bl{energía potencial gravitacional} es
+
+    \definicion{
+        \centering
+        \( U_{grav} = - \frac{G m_E m}{r} \quad \quad \text{(energía potencial gravitacional)} \)
+    }
+
+    \newex{Ejercicio 28. “De la Tierra a la Luna”}
+
+    \par En la novela de Julio Verne de 1865 con ese título, tres hombres viajaron a la Luna en un cascarón disparado desde un cañón gigante hundido en el suelo de Florida. El radio de la Tierra es $R_E = 6380 km = 6.38 \times 10^6 m$ y su masa es $m_E = 5.97 \times 10^{24} kg$.
+
+    \begin{list}{}{}
+        \item a) Calcule la rapidez inicial necesaria para disparar el cascarón verticalmente hasta una altura sobre la Tierra igual al radio de ésta.
+        \item b) Calcule la rapidez de escape, es decir, la rapidez inicial que permitiría al cascarón escapar de la Tierra. Desprecie la resistencia del aire, la rotación de la Tierra y la atracción gravitacional de la Luna.
+    \end{list}
+
+    \newex{Solución 28.}
+
+    \par ...
+
+    \newtitle{Más sobre la energía potencial gravitacional}
+
+    \par demostremos que si estamos cerca de la superﬁcie terrestre, la ecuación se reduce a $U = mgy$ que ya conocemos del capítulo 6. Primero reescribimos la ecuación:
+
+    \[ W_{grav} = G m_E m \frac{r_1 - r_2}{r_1 r_2} \]
+
+    \par Si el cuerpo se mantiene cerca de la Tierra, en el denominador podemos sustituir $r_1$ y $r_2$ por $R_E$, el radio de la Tierra, así que
+
+    \[ W_{grav} = G m_E m \frac{r_1 - r_2}{{R_E}^2} \]
+
+    \noindent $g = G m_E / {R_E}^2$, por lo cual
+
+    \[ W_{grav} = m g (r_1 - r_2) \]
+
+    \newsubsection{Movimiento de satélites}
+
+    \par Imaginemos que un motociclista se lanza horizontalmente del borde de un acantilado, en una trayectoria parabólica que termina en terreno plano en la base del acantilado. Si sobrevive y repite el experimento aumentando su rapidez de lanzamiento, caerá más lejos del punto de partida. Podemos imaginarlo lanzándose con tal rapidez que la curvatura de la Tierra se hace signiﬁcativa. Al caer, la caída es más larga por la curvatura.
+
+    \par \textit{Si la rapidez del motociclista es suﬁciente, y si su punto de lanzamiento es tan alto que pueda librar las montañas, podría seguir dando vuelta a la Tierra, sin jamás tocar el suelo}.
+
+    \vspace{0.5cm}
+
+    \par La ﬁgura muestra una variación de este tema. Lanzamos un proyectil del punto $A$ en la dirección $AB$, tangente a la superﬁcie terrestre.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{img/11.4-1.png}
+    \end{figure}
+
+    \par Las trayectorias $1$ a $7$ muestran el efecto de aumentar la rapidez inicial. En las trayectorias $3$ a $5$ el proyectil no choca contra la Tierra y se convierte en su satélite. Si no hay una fuerza que frene al proyectil, su rapidez al volver al punto $A$ es la que tenía inicialmente, y el movimiento se repite indeﬁnidamente.
+
+    \par Las trayectorias 1 a 5 terminan donde comenzaron y se denominan \bl{órbitas cerradas}. Todas las órbitas cerradas son elipses o segmentos de elipses; la trayectoria 4 es un círculo, un caso especial de elipse. Las trayectorias 6 y 7 son \bl{órbitas abiertas}; el proyectil nunca vuelve a su punto de partida y se aleja cada vez más de la Tierra.
+
+    \newtitle{Satélites: Órbitas circulares}
+
+    \ladoALado{
+        \par Una órbita \textit{circular} es el caso más sencillo. La única fuerza que actúa sobre un satélite en órbita circular alrededor de la Tierra es la atracción gravitacional terrestre, dirigida hacia el centro de la Tierra y, por lo tanto, hacia el centro de la órbita (ﬁgura). Como vimos en la sección 5.4, esto implica que el satélite está en movimiento circular uniforme y su rapidez es constante. El satélite no cae hacia la Tierra; más bien, cae constantemente alrededor de la Tierra. En una órbita circular, la rapidez es exactamente la necesaria para mantener constante la distancia entre el satélite y el centro de la Tierra.
+    }{img/11.4-2.png}{0.5}{0.5}
+
+    \par Veamos cómo calcular la rapidez constante v de un satélite en órbita circular. El radio de la órbita es $r$, medido desde el \textit{centro} de la Tierra; la aceleración del satélite tiene magnitud $a_{rad} = v^2/r$ y siempre está dirigida hacia el centro del círculo. Por la ley de la gravitación, la fuerza neta (la gravitacional) que actúa sobre el satélite de masa $m$ tiene magnitud $F_g = G m_E m / r^2$ y tiene la misma dirección de la aceleración. La segunda ley de Newton nos dice entonces que
+
+    \[ \frac{G m_E m}{r^2} = \frac{m v^2}{r} \]
+
+    \noindent Despejando v, tenemos que
+
+    \definicion{
+        \centering
+        \( v = \sqrt{\frac{G m_E}{r}} \quad \quad \text{(órbita circular)} \)
+    }
 
 \end{document}
