@@ -332,6 +332,100 @@
 
 \newsection{Movimiento en dos o en tres dimensiones}
 
+    \par ... % ...
+
+    \newsubsection{Vectores de posición y velocidad}
+
+    \par Considere una partícula que está en el punto $P$ en cierto instante. El \bl{vector de posición} $\vec{r}$ de la partícula en ese instante es un vector que va del origen del sistema de coordenadas al punto $P$. Las coordenadas cartesianas $x$, $y$ y $z$ de $P$ son las componentes $x$, $y$ y $z$ de $\vec{r}$.
+
+    \definicion{
+        \centering
+        \( \vec{r} = x \hat{i} + y \hat{j} + z \hat{k} \quad \quad \text{(vector de posición)} \)
+    }
+    
+    \definicion{
+        \centering
+        \( \vec{v} = \frac{d \vec{r}}{dt} = \frac{dx}{dt} \hat{i} + \frac{dy}{dt} \hat{j} + \frac{dz}{dt} \hat{k} \quad \quad \text{(vector de velocidad)} \)
+    }
+
+    \newsubsection{El vector de aceleración}
+
+    \definicion{
+        \centering
+        \( \vec{a} = \frac{d \vec{v}}{dt} = \frac{dv_x}{dt} \hat{i} + \frac{dv_y}{dt} \hat{j} + \frac{dv_z}{dt} \hat{k} \quad \quad \text{(vector de aceleración)} \)
+    }
+
+    \newsubsection{Movimiento de proyectiles}
+
+    \par ... % ...
+
+    \pagebreak
+
+    \newsubsection{Movimiento en un círculo}
+
+    \par Cuando una partícula se mueve en una trayectoria curva, la dirección de su velocidad cambia. Como vimos en la sección 2.2, esto implica que la partícula debe tener una componente de aceleración perpendicular a la trayectoria, incluso si la rapidez es constante.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/2.4-10.png}
+    \end{figure}
+
+    \newtitle{Movimiento circular uniforme}
+
+    \ladoALado{
+        \par Cuando una partícula se mueve en un círculo con \textit{rapidez constante}, tiene un \bl{movimiento circular uniforme}. La ﬁgura a muestra una partícula que se mueve con rapidez constante en una trayectoria circular de radio $R$ con centro en $O$. La partícula se mueve de $P_1$ a $P_2$ en un tiempo $\Delta t$.
+
+        \vspace{0.2cm}
+
+        \par Los ángulos rotulados $\Delta \phi$ en las ﬁguras a y b son iguales porque $\vec{v}_1$ es perpendicular a la línea $OP_1$ y $\vec{v}_2$ es perpendicular a la línea $OP_2$. Por lo tanto, los triángulos en las ﬁguras a y b son \textit{\bl{semejantes}}. Los cocientes de lados correspondientes de triángulos semejantes son iguales, así que
+
+        \[ \frac{ \left\lvert \Delta \vec{v} \right\rvert }{v_1} = \frac{\Delta s}{R} \quad \Longrightarrow \quad \left\lvert \Delta \vec{v} \right\rvert = \frac{v_1}{R} \Delta s \]
+
+        \par La magnitud $a_{med}$ de la aceleración media durante $\Delta t$ es entonces
+
+        \[ a_{med} = \frac{\left\lvert \Delta \vec{v} \right\rvert }{\Delta t} = \frac{v_1}{R} \frac{\Delta s}{\Delta t} \]
+
+        \par La magnitud a de la aceleración instantánea $\vec{a}$ en el punto $P_1$ es el límite de esta expresión conforme $P_2$ se acerca a $P_1$:
+
+        \[ a = \lim_{\Delta t \to 0} \frac{v_1}{R} \frac{\Delta s}{\Delta t} = \frac{v_1}{R} \lim_{\Delta t \to 0} \frac{\Delta s}{\Delta t} \]
+
+        \par Sin embargo, el límite de $\Delta s/\Delta t$ es la rapidez $v_1$ en el punto $P_1$. Además, $P_1$ puede ser cualquier punto de la trayectoria, así que podemos omitir el subíndice y con $v$ representar la rapidez en cualquier punto. Así,
+
+    }{img/2.4-20.png}{0.6}{0.4}
+
+    \definicion{
+        \centering
+        \( a_{rad} = \frac{v^2}{R} \quad \quad \text{(movimiento circular uniforme)} \)
+    }
+
+    \par Agregamos el subíndice “rad” para recordar que la dirección de la aceleración instantánea siempre sigue un radio del círculo, hacia su centro. Como la rapidez es constante, la aceleración siempre es perpendicular a la velocidad instantánea. Puesto que la aceleración siempre apunta al centro del círculo, en ocasiones se le llama \bl{aceleración centrípeta}. 
+
+    \vspace{0.5cm}
+
+    \par También podemos expresar la magnitud de la aceleración en un movimiento circular uniforme en términos del \bl{periodo} $T$ del movimiento, el tiempo de una revolución.
+
+    \[ v = \frac{2 \pi R}{T} \]
+
+    \par Al sustituir esto en la ecuación de la aceleración, obtenemos la expresión alterna
+
+    \definicion{
+        \centering
+        \( a_{rad} = \frac{4 \pi^2 R}{T^2} \quad \quad \text{(movimiento circular uniforme)} \)
+    }
+
+    \newtitle{Movimiento circular no uniforme}
+
+    \par Si la rapidez varía, tenemos un \bl{movimiento circular no uniforme}. En el movimiento circular no uniforme también hay una componente de aceleración paralela a la velocidad instantánea. Ésta es la componente $a_{\tan}$, sabemos que la componente de aceleración tangencial $a_{\tan}$ es igual a la tasa de cambio de la rapidez. Entonces,
+    
+    \definicion{
+        \centering
+        \( a_{rad} = \frac{v^2}{R} \quad y \quad a_{\tan} = \frac{d\left\lvert \vec{v}\right\rvert }{dt} \quad \quad \text{(movimiento circular no uniforme)} \)
+    }
+
+    \newsubsection{Velocidad relativa}
+
+    \par ... % ...
+
 % ------------------- SECCIÓN 2 -------------------
 
 \newsection{Leyes del movimiento de Newton}
@@ -898,7 +992,9 @@
         \par El movimiento circular uniforme, como todos los movimientos de una partícula, se rige por la segunda ley de Newton. Para hacer que la partícula acelere hacia el centro del círculo, la fuerza neta $\Sigma \vec{F}$ sobre la partícula debe estar dirigida siempre hacia el centro. La magnitud de la aceleración es constante, así que la magnitud $F_{net}$ de la fuerza neta también debe ser constante. Si deja de actuar la fuerza neta hacia adentro, la partícula saldrá disparada en una línea recta tangente al círculo (ver figura).
     }{img/3.3-8.png}{0.6}{0.4}
 
-    \par ...
+    \par ... % ...
+
+
 
     \pagebreak
     \newsubsection{Fuerzas fundamentales de la naturaleza}
@@ -1359,7 +1455,7 @@ que podemos sustituir $dv_x$ por ($dv_x/dx$) $dx$ en la ecuación. Esto cambia l
         \( W = \int_{P_1}^{P_2} F \cos(\phi) dl = \int_{P_1}^{P_2} F_{\parallel} dl = \int_{P_1}^{P_2} \vec{F} \cdot d\vec{l} \)
     }
 
-    \par ...
+    \par ... % ...
 
     \newex{Ejercicio 13. Movimiento en una trayectoria curva I}
 
@@ -1619,7 +1715,7 @@ que podemos sustituir $dv_x$ por ($dv_x/dx$) $dx$ en la ecuación. Esto cambia l
         \( W_{el} = \frac{1}{2} k x_1^2 - \frac{1}{2} k x_2^2 = U_{el,1} - U_{el,2} = - \Delta U_{el} \)
     }
 
-    \par ...
+    \par ... % ...
 
     \newex{Ejercicio 18. Movimiento con fuerzas gravitacional, elástica y de fricción}
 
@@ -1748,7 +1844,7 @@ que podemos sustituir $dv_x$ por ($dv_x/dx$) $dx$ en la ecuación. Esto cambia l
 
     \newsubsection{Diagramas de energía}
 
-    \par ...
+    \par ... % ...
 
     \newsection{Momento lineal, impulso y choques}
 
@@ -2056,19 +2152,160 @@ que podemos sustituir $dv_x$ por ($dv_x/dx$) $dx$ en la ecuación. Esto cambia l
 
     \newsubsection{*Propulsión a reacción}
 
-    \par ...
+    \par ... % ...
+
+
 
     \newsection{Rotación de Cuerpos Rígidos}
 
-    \par ...
+    \par La rotación se da en todos los niveles, desde el movimiento de los electrones en los átomos hasta los movimientos de las galaxias enteras. Necesitamos desarrollar métodos generales para analizar el movimiento de un cuerpo en rotación.
+    \par Los cuerpos reales llegan a ser muy complejos; las fuerzas que actúan sobre ellos pueden deformarlos: estirarlos, torcerlos y aplastarlos. Por el momento ignoraremos tales deformaciones y supondremos que el cuerpo tiene forma y tamaño perfectamente deﬁnidos e inmutables. Llamamos a este modelo idealizado \bl{cuerpo rígido}.
+    \par Comenzaremos con el lenguaje de la cinemática para describir el movimiento rotacional. Luego veremos la energía cinética de la rotación, la clave para usar los métodos de energía en el movimiento rotacional. En el capítulo 9 deduciremos los principios dinámicos que relacionan las fuerzas sobre un cuerpo con su movimiento rotacional.
+
+    \newsubsection{Velocidad y aceleración angulares}
+
+    \newtitle{Velocidad angular}
+
+    \par Podemos describir el movimiento rotacional del cuerpo en términos de la razón de cambio de $\theta$. Un cuerpo que gira forma un ángulo $\theta_1$ con el eje $+x$ en el instante $t_1$, En un instante posterior $t_2$, el ángulo cambió a $\theta_2$. Deﬁnimos la \bl{velocidad angular media} $\omega_{med-z}$ del cuerpo en el intervalo $\Delta t = t_2 - t_1$ como la razón del \bl{desplazamiento angular} $\Delta \theta = \theta_2 - \theta_1$ en $\Delta t$:
+    
+    \[ \omega_{med-z} = \frac{\Delta \theta}{\Delta t} \]
+
+    \par El subíndice $z$ indica que el cuerpo está girando en torno al eje $z$, que es perpendicular al plano del diagrama. La velocidad angular instantánea $\omega_z$ es el límite de $\omega_{med-z}$ cuando $\Delta t$ tiende a cero, es decir, la derivada de $\theta$ con respecto a $t$:
+
+    \definicion{
+        \centering
+        \( \omega_z = \lim_{\Delta t \to 0} \frac{\Delta \theta}{\Delta t} = \frac{d\theta}{dt} \quad \quad \text{(deﬁnición de velocidad angular)} \)
+    }
+
+    \pagebreak
+
+    \newtitle{Velocidad angular como un vector}
+
+    \par Así como $v_x$ es la componente $x$ del vector de velocidad $\vec{v}$, $\omega_z$ es la componente $z$ de un vector de velocidad angular $\vec{\omega}$ dirigido a lo largo del eje de rotación. Como muestra la ﬁgura a, la dirección de $\vec{\omega}$ está dada por la regla de la mano derecha. Si la rotación es sobre el eje $z$, $\vec{\omega}$ sólo tiene componente $z$, la cual es positiva si $\vec{\omega}$ apunta en la dirección $+z$ y negativa si $\vec{\omega}$ apunta en la dirección $-z$ (ﬁgura b).
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/8.1-1.png}
+    \end{figure}
+
+    \newtitle{Aceleración angular}
+
+    \par Si $\omega_{1z}$ y $\omega_{2z}$ son las velocidades angulares instantáneas en $t_1$ y $t_2$, deﬁnimos la \bl{aceleración angular media} $\alpha_{med-z}$ en el intervalo $\Delta t = t_2 - t_1$ como el cambio de la velocidad angular dividido entre $\Delta t$:
+
+    \[ \alpha_{med-z} = \frac{\Delta \omega_z}{\Delta t} \]
+
+    \par La \bl{aceleración angular instantánea} $\alpha_z$ es el límite de $\alpha_{med-z}$ cuando $\Delta t \to 0$:
+
+    \definicion{
+        \centering
+        \( \alpha_z = \lim_{\Delta t \to 0} \frac{\Delta \omega_z}{\Delta t} = \frac{d\omega_z}{dt} \quad \quad \text{(deﬁnición de aceleración angular)} \)
+    }
+
+    \par Dado que $\omega_z = d\theta/dt$, también podemos expresar la aceleración angular como la segunda derivada de la coordenada angular:
+
+    \definicion{
+        \centering
+        \( \alpha_z = \frac{d}{dt} \frac{d\theta}{dt} = \frac{d^2 \theta}{dt^2} \)
+    }
+
+    \pagebreak
+
+    \newtitle{Aceleración angular como un vector}
+
+    \ladoALado{
+        \par Así como hicimos con la velocidad angular, resulta útil deﬁnir un \textit{vector} de aceleración angular $\vec{\alpha}$. Matemáticamente, $\vec{\alpha}$ es la derivada con respecto al tiempo del vector de velocidad angular $\vec{\omega}$. Si el objeto gira en torno al eje $z$ ﬁjo, $\vec{\alpha}$ sólo tiene componente $z$; la cantidad $\alpha_z$ es precisamente esa componente. En este caso, $\vec{\alpha}$ apunta en la misma dirección que $\vec{\omega}$ si la rotación se está acelerando, y en la dirección opuesta si se está frenando (ﬁgura).
+    }{img/8.1-2.png}{0.6}{0.4}
+
+    \newsubsection{Rotación con aceleración angular constante}
+
+    \par ... % ...
+
+    \newsubsection{Relación entre cinemática lineal y angular}
+
+    \newtitle{Rapidez lineal en la rotación de un cuerpo rígido}
+
+    \par La rapidez de una partícula es directamente proporcional a la velocidad angular del cuerpo; cuanto más rápidamente gire el cuerpo, mayor será la rapidez de cada partícula. El punto P está a una distancia constante r del eje de rotación, así que se mueve en un círculo de radio r. En cualquier instante, el ángulo $\theta$ (en rad) y la longitud de arco $s$ están relacionadas por
+
+    \[ s = r \theta \]
+
+    \par Derivamos esto con respecto al tiempo, observando que r es constante para una partícula especíﬁca, y obtenemos el valor absoluto de ambos lados:
+
+    \[ \left\lvert \frac{ds}{dt}\right\rvert  = r \left\lvert \frac{d\theta}{dt}\right\rvert  \]
+
+    \par Ahora, $\left\lvert ds/dt\right\rvert $ es el valor absoluto de la razón de cambio de la longitud de arco, que es igual a la rapidez lineal instantánea $v$ de la partícula. Así,
+
+    \definicion{
+        \centering
+        \( v = r \omega \quad \quad \text{(relación entre rapideces lineal y angular)} \)
+    }
+
+    \newtitle{Aceleración lineal en la rotación de un cuerpo rígido}
+
+    \par Podemos representar la aceleración de una partícula que se mueve en un círculo en términos de sus componentes centrípeta y tangencial, $a_{rad}$ y $a_{\tan}$, como hicimos en la sección 2.4. Derivando la ecuación ($v = r \omega$), obtenemos
+
+    \definicion{
+        \centering
+        \( a_{\tan} = \frac{dv}{dt} = r \frac{d \omega}{dt} = r \alpha \)
+    }
+
+    \noindent Esta componente de la aceleración de una partícula siempre es tangente a la trayectoria circular de la partícula.
+
+    \vspace{0.2cm}
+
+    \par En la sección 2.4 dedujimos la relación $a_{rad} = v^2/r$. Podemos expresar esto en términos de v usando la ecuación ($v = r \omega$):
+
+    \definicion{
+        \centering
+        \( a_{rad} = \frac{v^2}{r} = \omega^2 r \)
+    }
+
+    \noindent Esto se cumple en todo instante aun si $\omega$ y $v$ no son constantes. La componente centrípeta siempre apunta hacia el eje de rotación.
+
+    \newsubsection{Energía en el movimiento rotacional}
+
+    \par Un cuerpo rígido en rotación es una masa en movimiento, así que tiene energía cinética que podemos expresar en términos de la rapidez angular del cuerpo y una nueva cantidad llamada \textit{momento de inercia}, que depende de la masa del cuerpo y de la forma en que se distribuye tal masa.
+
+    \vspace{0.4cm}
+
+    \par Para deducir esta relación, consideramos que el cuerpo está formado por un gran número de partículas, con masas $m_1$, $m_2$, …, a distancias $r_1$, $r_2$, … del eje de rotación. Las partículas no tienen que estar todas en el mismo plano, así que especiﬁcamos que $r_i$ es la distancia \textit{perpendicular} de la partícula $i$-ésima al eje.
+
+    \vspace{0.1cm}
+
+    \par Cuando un cuerpo rígido gira sobre un eje ﬁjo, la rapidez $v_i$ de la $i$-ésima partícula está dada por la ecuación, $v_i = r_i \omega$, donde $\omega$ es la rapidez angular del cuerpo. Diferentes partículas tienen distintos valores de $r$, pero $\omega$ es igual para todas (si no, el cuerpo no sería rígido). La energía cinética de la $i$-ésima partícula es
+
+    \[ \frac{1}{2} m_i v_i^2 = \frac{1}{2} m_i r_i^2 \omega^2 \]
+
+    \par La energía cinética \textit{total} del cuerpo es la suma de las energías cinéticas de todas sus partículas:
+
+    \[ K = \frac{1}{2} m_1 r_1^2 \omega^2 + \frac{1}{2} r_2^2 \omega^2 + \cdots = \sum_{i}^{} \frac{1}{2} m_i r_i^2 \omega^2 \]
+
+    \par Sacando el factor común $\omega^2/2$ de esta expresión:
+    
+    \[ K = \frac{1}{2} \left(\sum_{i}^{} m_i r_i^2\right)  \omega^2 \]
+
+    \par La cantidad entre paréntesis, que se obtiene multiplicando la masa de cada partícula por el cuadrado de su distancia al eje de rotación y sumando los productos, se denota con $I$ y es el \bl{momento de inercia} del cuerpo para este eje de rotación:
+
+    \definicion{
+        \centering
+        \( I = m_1 r_1^2 + m_2 r_2^2 + \cdots = \sum_{i}^{} m_i r_i^2 \)
+    }
+
+    \par La palabra “momento” implica que $I$ depende de la distribución espacial de la masa del cuerpo; nada tiene que ver con el tiempo. La unidad del momento de inercia en el SI es el kilogramo-metro cuadrado ($kg \cdot m^2$).
+
+    \par En términos del momento de inercia $I$, la \bl{energía cinética rotacional} $K$ de un cuerpo rígido es
+
+    \definicion{
+        \centering
+        \( K = \frac{1}{2} I \omega^2 \)
+    }
 
     \newsection{Dinámica del Movimiento Rotacional}
 
-    \par ...
+    \par ... % ...
 
     \newsection{Equilibrio y Elasticidad}
 
-    \par ...
+    \par ... % ...
 
     \newsection{Gravitación}
 
@@ -2240,5 +2477,87 @@ que podemos sustituir $dv_x$ por ($dv_x/dx$) $dx$ en la ecuación. Esto cambia l
         \centering
         \( v = \sqrt{\frac{G m_E}{r}} \quad \quad \text{(órbita circular)} \)
     }
+
+    \par Esta relación muestra que no podemos elegir el radio de la órbita $r$ y la rapidez $v$ independientemente; para un radio $r$ dado, la rapidez $v$ de la órbita circular está determinada.
+
+    \par Podemos deducir una relación entre el radio r de una órbita circular y el periodo $T$, la duración de una revolución. La rapidez $v$ es la distancia $2 \pi r$ recorrida en una revolución, dividida entre el periodo:
+
+    \[ v = \frac{2 \pi r}{T} \]
+
+    \par Obtenemos una expresión para $T$ si despejamos $T$ de la ecuación y sustituimos $v$:
+
+    \definicion{
+        \centering
+        \( T = \frac{2 \pi r}{v} = 2 \pi r \sqrt{\frac{r}{G m_E}} = \frac{2 \pi r^{3/2}}{\sqrt{G m_E}} \quad \quad \text{(periodo de una órbita circular)} \)
+    }
+
+    \pagebreak
+
+    \par Puesto que la rapidez v en una órbita circular está determinada por la ecuación ($v = \sqrt{\frac{G m_E}{r}}$) para un radio orbital $r$ dado, la energía mecánica total E 5 K 1 U también está determinada.
+
+    \[ E = K + U = \frac{1}{2} m v^2 - \frac{G m_E m}{r} = \frac{1}{2} m \left( \frac{G m_E}{r} \right) - \frac{G m_E m}{r} \]
+
+    \definicion{
+        \centering
+        \( E = - \frac{G m_E m}{2r} \quad \quad \text{(energia mecánica total de una órbita circular)} \)
+    }
+
+    \par La energía mecánica total en una órbita circular es negativa e igual a la mitad de la energía potencial. Aumentar el radio orbital r implica aumentar la energía mecánica (es decir, hacer E menos negativa).
+
+    \newsubsection{Las leyes de Kepler y el movimiento de los planetas}
+
+    \par Uno de los grandes logros intelectuales de los siglos XVI y XVII fue darse cuenta de tres descubrimientos: que la Tierra es un planeta, que todos los planetas están en órbita alrededor del Sol y que los movimientos aparentes de los planetas vistos desde la Tierra pueden servir para determinar con precisión sus órbitas.
+
+    \vspace{0.2cm}
+
+    \par Los primeros dos descubrimientos fueron publicados por Nicolás Copérnico en Polonia en 1543. La determinación de las órbitas planetarias entre 1601 y 1619 corrió a cargo del astrónomo y matemático alemán Johannes Kepler, utilizando un voluminoso conjunto de datos precisos acerca de los movimientos planetarios aparentes compilado por su mentor, el astrónomo danés Tycho Brahe. Por medio de prueba y error, Kepler descubrió tres leyes empíricas que describían con exactitud los movimientos de los planetas:
+
+    \definicion{
+        \begin{enumerate}
+            \item \bl{Cada planeta se mueve en una órbita elíptica, con el Sol en uno de los focos de la elipse.}
+            \item \bl{Una línea del Sol a un planeta dado barre áreas iguales en tiempos iguales.}
+            \item \bl{Los periodos de un planeta son proporcionales a las longitudes del eje mayor de sus órbita elevadas a la potencia $\frac{3}{2}$.}
+        \end{enumerate}
+    }
+
+    \par Kepler no sabía \textit{por qué} los planetas se movían así. Tres generaciones después, cuando Newton dirigió su atención al movimiento planetario, descubrió que las leyes de Kepler pueden \textit{deducirse}; son consecuencias de las leyes de Newton del movimiento y de la ley de la gravitación.
+
+    \pagebreak
+
+    \newtitle{Primera ley de Kepler}
+
+    \ladoALado{
+        \par La ﬁgura muestra la geometría de la elipse. La dimensión más larga es el eje mayor, siendo “a” la mitad de su longitud; esta distancia se denomina \bl{eje semimayor}. La suma de las distancias de $S$ a $P$ y de $S'$ a $P$ es la misma para todos los puntos de la curva. $S$ y $S'$ son los \textit{focos}. El Sol está en $S$, y el planeta está en $P$; consideramos a ambos como puntos porque su tamaño es muy pequeño en comparación con la distancia entre ellos. No hay nada en el otro foco $S'$.
+
+        \vspace{0.2cm}
+
+        \par La distancia de cada foco al centro de la elipse es ea, donde e es un número adimensional entre $0$ y $1$ llamado \bl{excentricidad}. Si $e = 0$, la elipse es un círculo. Las órbitas reales de los planetas son casi circulares; sus excentricidades varían entre $0.007$ para Venus y $0.206$ para Mercurio. (La órbita de la Tierra tiene $e = 0.017$.)
+    }{img/11.5-1.png}{0.6}{0.4}
+
+    \vspace{0.4cm}
+
+    \par Newton pudo demostrar que, para un cuerpo sobre el que actúa una fuerza de atracción proporcional a $1/r^2$ las únicas órbitas cerradas posibles son un círculo o una elipse; también demostró que las órbitas abiertas deben ser parábolas o hipérbolas. Estos resultados pueden deducirse aplicando directamente las leyes de Newton y la ley de la gravitación, junto con ecuaciones diferenciales más complejas que las que podemos enfrentar.
+
+    \newtitle{Segunda ley de Kepler}
+
+    \ladoALado{
+        \par La ﬁgura 12.20 muestra la segunda ley de Kepler. En un lapso pequeño $dt$, la línea del Sol $S$ al planeta $P$ describe un ángulo $d \theta$. El área barrida es el triángulo coloreado de altura $r$, base $r d \theta$ y área $dA = \frac{1}{2} r^2 d \theta$ (ﬁgura 12.20b). La rapidez con la que se barre el área, $dA/dt$, se denomina \textit{velocidad de sector}:
+
+        \[ \frac{dA}{dt} = \frac{1}{2} r^2 \frac{d \theta}{dt} \]
+
+        \par La esencia de la segunda ley de Kepler establece que la velocidad de sector tiene el mismo valor en todos los puntos de la órbita. Cuando el planeta está cerca del Sol, $r$ es pequeña y $d\theta/dt$ es grande; cuando el planeta está lejos del Sol, $r$ es grande y $d\theta/dt$ es pequeña.
+
+        \vspace{0.4cm}
+
+        \par Para saber por qué la segunda ley de Kepler es consecuencia de las leyes de Newton, expresamos $dA/dt$ en términos del vector de velocidad $\vec{v}$ del planeta $P$. La componente de $\vec{v}$ perpendicular a la línea radial es $v_{\perp} = v sen \Phi$. Por la ﬁgura 12.20b, el desplazamiento en la dirección de $v_{\perp}$ durante el tiempo $dt$ es $r d \theta$, de modo que tenemos $v_{\perp} = r d\theta/dt$. Obteniendo
+
+        \[ \frac{dA}{dt} = \frac{1}{2} r v sen \Phi\]
+        
+
+    }{img/11.5-2.png}{0.6}{0.4}
+    
+        \par ... % ...
+
+
 
 \end{document}
