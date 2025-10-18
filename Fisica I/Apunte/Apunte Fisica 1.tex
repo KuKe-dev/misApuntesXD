@@ -2299,6 +2299,43 @@ que podemos sustituir $dv_x$ por ($dv_x/dx$) $dx$ en la ecuación. Esto cambia l
         \( K = \frac{1}{2} I \omega^2 \)
     }
 
+    \newsubsection{Teorema de los ejes paralelos}
+
+    \par En la sección 8.4 apuntamos que un cuerpo no tiene un solo momento de inercia. De hecho, tiene un número infinito, porque el número de ejes sobre los que podría girar es infinito. No obstante, hay una relación simple entre el momento de inercia $I_{cm}$ de un cuerpo de masa $M$ alrededor de un eje que pasa por el centro de masa y el momento de inercia $I_P$ alrededor de cualquier otro eje paralelo al original pero desplazado una distancia $d$. Esta relación, llamada \bl{teorema de los ejes paralelos}, dice que
+
+    \definicion{
+        \centering
+        \( I_P = I_{cm} + M d^2 \quad \quad \text{(teorema de los ejes paralelos)} \)
+    }
+
+    \ladoALado{
+        \par Para demostrarlo, consideramos dos ejes paralelos al eje $z$; uno pasa por el centro de masa; y el otro, por un punto $P$ (figura). Primero tomamos una rebanada muy delgada del cuerpo, paralela al plano $xy$ y perpendicular al eje $z$. Tomamos el origen de nuestro sistema de coordenadas en el centro de masa del cuerpo; así, las coordenadas del centro de masa son $x_{cm} = y_{cm} = z_{cm} = 0$. El eje que pasa por el centro de masa atraviesa esta rebanada delgada en el punto $O$, y el eje paralelo la atraviesa en el punto $P$, cuyas coordenadas $x$ e $y$ son ($a$, $b$). La distancia entre este eje y el que pasa por el centro de masa es $d$, donde $d^2 = a^2 + b^2$.
+        \par Sea $m_i$ un elemento de masa de nuestra rebanada, con coordenadas ($x_i$, $y_i$, $z_i$). El momento de inercia $I_{cm}$ de la rebanada alrededor del eje que pasa por el centro de masa (en $O$) es
+
+        \[ I_{cm} = \sum_{i}^{} m_i (x_i^2 + y_i^2) \]
+
+    }{img/8.5-1.png}{0.65}{0.35}
+
+    \pagebreak
+
+    \noindent El momento de inercia de la rebanada alrededor del eje que pasa por $P$ es
+
+    \[ I_{P} = \sum_{i}^{} m_i \left[ (x_i - a)^2 + (y_i - b)^2 \right]  \]
+
+    \noindent Expandiendo los cuadrados y reagrupando:
+
+    \[ I_{P} = \sum_{i}^{} m_i (x_i^2 + y_i^2) - 2 a \sum_{i}^{} m_i x_i - 2 b \sum_{i}^{} m_i y_i + (a^2 + b^2) \sum_{i}^{} m_i\]
+
+    \par La primera sumatoria es $I_{cm}$. Por la deﬁnición de centro de masa, la segunda y la tercera sumatorias son proporcionales a $x_{cm}$ y $y_{cm}$, que son cero porque tomamos el origen en el centro de masa. El último término es $d^2$ multiplicada por la masa total, es decir, $M d^2$. Queda demostrado que $I_P = I_{cm} + M d^2$.
+
+    \vspace{0.5cm}
+
+    \par Como muestra la ecuación ($I_P = I_{cm} + M d^2$), un cuerpo rígido tiene menor momento de inercia alrededor de un eje que pasa por el centro de masa que alrededor de cualquier otro eje paralelo. Por ello, es más fácil poner a girar un cuerpo si el eje de rotación pasa por el centro de masa.
+
+    \newsubsection{*Cálculos de momento de inercia}
+
+    \par ... % ...
+
     \newsection{Dinámica del Movimiento Rotacional}
 
     \par ... % ...

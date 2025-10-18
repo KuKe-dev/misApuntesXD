@@ -12,13 +12,52 @@
 \usepackage[
     top=1cm,
     bottom=1cm,
-    left=2cm,
-    right=2cm 
+    left=0cm,
+    right=0cm 
 ]{geometry}
 \usepackage{tikz}
 \usetikzlibrary{angles, quotes}
 \usepackage{float}
 
+% Configuración de colores
+\definecolor{azuloscuro}{HTML}{0D1B2A}
+\definecolor{azulclaro}{HTML}{1B263B}
+\definecolor{celeste}{HTML}{415A77}
+\definecolor{turquesa}{HTML}{778DA9}
+\definecolor{blanco}{HTML}{E0E1DD}
+
+% Comando para texto con fórmulas a la derecha
+\newcommand{\textoformula}[2]{%
+    \vspace{0.8cm}
+    \hspace{1cm}
+    \begin{minipage}[t]{0.49\textwidth}
+        \vspace{0pt}
+        \small{#1}
+    \end{minipage}
+    \hspace{0.4cm}
+    \begin{minipage}[t]{0.9\textwidth}
+        \vspace{0pt}
+        #2
+    \end{minipage}
+    \vspace{0.8cm}
+    \hrule
+}
+
+% Comando para encabezado de capítulo tipo libro
+\newcommand{\capitulo}[1]{
+    \pagebreak
+    \vspace{1em}
+    \hspace{1cm}
+    {\Huge\textcolor{celeste}{\textsf{#1}}}\\[0.5em]
+    \vspace{1em}
+    \hrule
+    
+}
+
+\newcommand{\for}[1]{
+  \par $#1$
+  \vspace{0.5cm}
+}
 
 
 
@@ -28,6 +67,14 @@
 
     \newpage
 
-    \par aaa
+    \capitulo{Unidades, Cantidades Físicas y Vectores}
+
+    \textoformula{
+      \par sdfasdf awefaefaiu  awieufhaieufhiaeufh hfeuhfa fhaehf ehf ha ehahefjaehfjahefjahef haewfhjae hef
+    }{
+      \for{m = \frac{1}{2}}
+
+      \for{m = \frac{1}{2}}
+    }
 
 \end{document}
